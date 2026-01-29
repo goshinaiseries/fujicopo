@@ -3,160 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>座ってごしない | 専門家監修のコンディショニング・クッション</title>
+    <title>座ってごしない | 没頭するすべての人へ贈る、コンディショニング・シート</title>
     <style>
-        :root {
-            --brand-navy: #0a192f;
-            --brand-blue: #112240;
-            --accent-gold: #c5a059;
-            --text-main: #333;
-            --text-white: #fff;
-        }
-
-        body { 
-            font-family: "Inter", "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
-            margin: 0; color: var(--text-main); background-color: #fff; line-height: 1.8;
-        }
-
-        /* HERO AREA */
-        .hero {
-            position: relative; height: 100vh; display: flex; align-items: center; justify-content: center;
-            background-color: var(--brand-navy); color: #fff; overflow: hidden;
-        }
-        .hero img {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover; opacity: 0.5; z-index: 1;
-        }
-        .hero-content { position: relative; z-index: 2; text-align: center; padding: 0 20px; }
-        .hero-tag { font-size: 1rem; letter-spacing: 0.4em; color: var(--accent-gold); font-weight: bold; margin-bottom: 20px; display: block; }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1.2; margin: 0; font-weight: 800; }
-
-        /* PROBLEM AREA: 悩みを大きく強調 */
-        .section-problem { padding: 120px 20px; background: var(--brand-blue); color: #fff; text-align: center; }
-        .problem-title { font-size: 1.2rem; color: var(--accent-gold); margin-bottom: 20px; font-weight: bold; }
-        .problem-main-copy { font-size: clamp(1.8rem, 5vw, 2.8rem); margin-bottom: 60px; font-weight: 700; line-height: 1.4; }
-        .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto; }
-        .problem-item { 
-            background: rgba(255,255,255,0.05); border-left: 5px solid var(--accent-gold); 
-            padding: 40px 30px; text-align: left; font-size: 1.5rem; font-weight: bold; 
-        }
-
-        /* FEATURE AREA: 八雲の文言を追加 */
-        section { padding: 120px 20px; max-width: 1100px; margin: 0 auto; }
-        .section-label { color: var(--accent-gold); font-size: 0.9rem; font-weight: 800; letter-spacing: 0.2em; display: block; margin-bottom: 15px; }
-        h2 { font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 30px; line-height: 1.3; }
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,500&family=Noto+Serif+JP:wght@200;300;400;600;700&display=swap');
         
-        .flex-container { display: flex; align-items: center; gap: 60px; margin-bottom: 120px; flex-wrap: wrap; }
-        .flex-image { flex: 1; min-width: 320px; border-radius: 12px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15); }
-        .flex-text { flex: 1; min-width: 320px; }
-        .flex-image img { width: 100%; display: block; }
-
-        /* 特徴の強調テキスト */
-        .highlight-box { background: #f8f9fa; padding: 40px; border-radius: 8px; margin-top: 30px; border-top: 4px solid var(--brand-navy); }
-        .highlight-box p { font-size: 1.1rem; margin: 0; font-weight: 500; }
-
-        /* CTA */
-        .cta-section { background: #f4f7f8; padding: 100px 20px; text-align: center; }
-        .price-card { background: #fff; padding: 60px 20px; max-width: 700px; margin: 0 auto; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-        .price-num { font-size: 4.5rem; font-weight: 900; color: var(--brand-navy); margin: 20px 0; }
-
-        /* 追従ボタン */
-        .floating-footer {
-            position: fixed; bottom: 0; left: 0; width: 100%; 
-            background: rgba(10, 25, 47, 0.98); padding: 15px 25px; 
-            display: flex; justify-content: space-between; align-items: center; z-index: 1000;
-            box-sizing: border-box;
+        :root {
+            --brand-navy: #050a14;
+            --brand-gold: linear-gradient(135deg, #b8860b 0%, #e6b422 50%, #b8860b 100%);
+            --text-gold: #c5a059;
+            --bg-silk: #fcfcfc;
+            --line-gold: rgba(184, 134, 11, 0.4);
         }
-        .btn-main { 
-            background: var(--accent-gold); color: #fff; text-decoration: none; 
-            padding: 15px 50px; border-radius: 4px; font-weight: bold; font-size: 1.1rem;
-            transition: 0.3s; text-align: center;
-        }
-        .btn-main:hover { background: #a68445; transform: translateY(-2px); }
 
-        footer { padding: 60px 20px 140px; background: var(--brand-navy); color: rgba(255,255,255,0.4); text-align: center; font-size: 0.85rem; }
+        body { font-family: 'Noto Serif JP', serif; margin: 0; color: #1a1a1a; line-height: 2.3; background-color: #fff; overflow-x: hidden; }
+        
+        /* 1. アニメーション設定 */
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 1.8s cubic-bezier(0.2, 1, 0.3, 1), transform 1.8s cubic-bezier(0.2, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
-        @media (max-width: 768px) {
-            .problem-item { font-size: 1.2rem; padding: 30px 20px; }
-            .floating-footer { flex-direction: column; gap: 10px; text-align: center; }
+        /* 2. HERO */
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; background-color: var(--brand-navy); position: relative; }
+        .hero img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+        .hero-copy { position: absolute; z-index: 10; text-align: center; color: #fff; width: 100%; padding: 0 20px; }
+        .hero-copy span { font-family: 'Cormorant Garamond', serif; letter-spacing: 0.6em; color: var(--text-gold); font-size: 1.1rem; display: block; margin-bottom: 25px; }
+        .hero-copy h1 { font-size: clamp(1.8rem, 5.5vw, 3.8rem); letter-spacing: 0.25em; font-weight: 700; text-shadow: 2px 2px 25px rgba(0,0,0,0.9); line-height: 1.6; }
+
+        /* 3. TARGET: 「私のことだ！」と思わせる問いかけ */
+        .section-targeting { padding: 180px 10%; background: var(--brand-navy); color: #fff; text-align: center; }
+        .targeting-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 80px; }
+        .target-card { border: 1px solid rgba(255,255,255,0.2); padding: 50px 30px; border-radius: 4px; transition: 0.4s; }
+        .target-card:hover { border-color: var(--text-gold); background: rgba(255,255,255,0.05); }
+        .target-card h4 { color: var(--text-gold); font-size: 1.4rem; margin-bottom: 25px; }
+        .target-card p { font-size: 0.95rem; line-height: 2; text-align: left; }
+
+        /* 4. INTRO: テーマの言葉 */
+        .section-intro { background-color: #fff; color: var(--brand-navy); padding: 160px 20px; text-align: center; position: relative; }
+        .section-intro::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 1px; height: 120px; background: var(--line-gold); }
+        .intro-title { font-size: clamp(1.2rem, 3.2vw, 2rem); line-height: 2.5; font-weight: 300; max-width: 1000px; margin: 0 auto; letter-spacing: 0.15em; }
+
+        /* 5. STORY: 小泉八雲とセツ */
+        .section-story { padding: 160px 0; background-color: var(--bg-silk); }
+        .story-flex { display: flex; align-items: center; justify-content: center; gap: 80px; max-width: 1400px; margin: 0 auto; flex-wrap: wrap; }
+        .story-left { flex: 1; min-width: 320px; display: flex; justify-content: flex-end; }
+        .story-left img { width: 100%; max-width: 550px; height: auto; object-fit: contain; }
+        .story-right { flex: 1; min-width: 320px; padding: 40px; border-left: 2px solid var(--text-gold); box-sizing: border-box; text-align: left; }
+        .story-tag { color: var(--text-gold); font-family: 'Cormorant Garamond', serif; letter-spacing: 0.3em; margin-bottom: 20px; display: block; font-size: 0.9rem; }
+        .story-quote { font-size: 1.7rem; font-weight: 600; color: #333; margin-bottom: 35px; line-height: 1.8; }
+
+        /* 6. TECHNOLOGY: 商品詳細を圧倒的ボリュームへ */
+        .section-tech { padding: 160px 10%; background: #fff; }
+        .tech-row { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; margin-bottom: 180px; }
+        .tech-row:nth-child(even) { direction: rtl; }
+        .tech-row:nth-child(even) .tech-text { direction: ltr; }
+        .tech-img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
+        .tech-tag { color: var(--text-gold); font-weight: 700; letter-spacing: 0.3em; display: block; margin-bottom: 20px; }
+        .tech-text h3 { font-size: 2rem; margin-bottom: 30px; color: var(--brand-navy); line-height: 1.5; }
+        .tech-text p { font-size: 1rem; color: #444; margin-bottom: 20px; }
+
+        /* 7. FAQ: 充実の7項目 */
+        .section-faq { background-color: var(--bg-silk); padding: 140px 10%; }
+        .faq-container { max-width: 900px; margin: 0 auto; }
+        .faq-item { background: #fff; margin-bottom: 25px; padding: 50px; border-radius: 4px; border: 1px solid #f0f0f0; }
+        .faq-q { font-weight: 700; color: var(--brand-navy); font-size: 1.2rem; margin-bottom: 15px; display: block; }
+        .faq-q::before { content: "Q. "; color: var(--text-gold); font-size: 1.4rem; }
+        .faq-a::before { content: "A. "; color: var(--text-gold); font-weight: bold; }
+
+        /* 8. CTA: 購入 */
+        .section-cta { background: var(--brand-navy); color: #fff; text-align: center; padding: 180px 5%; }
+        .cta-img-flex { display: flex; justify-content: center; gap: 30px; margin: 60px 0; flex-wrap: wrap; }
+        .cta-img-flex img { width: 450px; background: #fff; padding: 20px; border-radius: 4px; object-fit: contain; }
+        .cta-price { font-size: 3.5rem; font-weight: 700; margin-bottom: 40px; }
+        .cta-btn { display: inline-block; background: var(--brand-gold); color: #fff; padding: 30px 120px; text-decoration: none; font-weight: 700; font-size: 1.4rem; transition: 0.4s; }
+        .cta-btn:hover { transform: scale(1.03); box-shadow: 0 0 50px rgba(184, 134, 11, 0.4); }
+
+        /* 9. DEVELOPER: 購入の後に配置 */
+        .section-developer { padding: 160px 10%; background: #fff; border-top: 1px solid #eee; display: flex; align-items: center; gap: 80px; }
+        .dev-photo { flex: 0.8; }
+        .dev-photo img { width: 100%; border-radius: 4px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
+        .dev-info { flex: 1.2; text-align: left; }
+        .dev-info h2 { font-size: 2rem; color: var(--brand-navy); margin-bottom: 30px; }
+
+        /* 10. CORPORATE: フジイコーポレーション */
+        .section-company { padding: 120px 10%; background: var(--bg-silk); border-top: 1px solid #eee; }
+        .company-table { width: 100%; border-collapse: collapse; max-width: 900px; margin: 40px auto; background: #fff; }
+        .company-table th, .company-table td { padding: 30px; border-bottom: 1px solid #eee; text-align: left; }
+        .company-table th { width: 30%; color: var(--brand-navy); font-weight: 600; }
+
+        footer { background: #111; color: #777; padding: 60px; text-align: center; font-size: 0.85rem; }
+
+        @media (max-width: 900px) {
+            .story-flex, .tech-row, .section-developer { flex-direction: column; display: block; }
+            .tech-row:nth-child(even) { direction: ltr; }
+            .hero-copy h1 { font-size: 2rem; }
+            .cta-img-flex img, .tech-img, .dev-photo { margin-bottom: 40px; width: 100%; }
+            section { padding: 80px 5% !important; }
         }
     </style>
 </head>
 <body>
 
     <div class="hero">
-        <img src="Main_A4.jpg" alt="座ってごしない">
-        <div class="hero-content">
-            <span class="hero-tag">RECOVERY PERFORMANCE</span>
-            <h1>座る時間を、<br>リカバリーの時間へ。</h1>
+        <img src="hero.jpg" alt="座ってごしない">
+        <div class="hero-copy reveal">
+            <span>MATSUE STORY & TECHNOLOGY</span>
+            <h1>「座る」という日常に、<br>愛という名の休息を。</h1>
+            <p>1日8時間以上没頭するあなたへ。身体を整えるための答えを、松江から。</p>
         </div>
     </div>
 
-    <div class="section-problem">
-        <span class="problem-title">YOUR PROBLEM</span>
-        <h2 class="problem-main-copy">デスクワークの蓄積は、<br>集中力を削いでいく。</h2>
-        <div class="problem-grid">
-            <div class="problem-item">夕方になると腰が重い</div>
-            <div class="problem-item">集中力が続かない</div>
-            <div class="problem-item">立ち上がるときの違和感</div>
-        </div>
-    </div>
-
-    <section>
-        <div class="flex-container">
-            <div class="flex-image">
-                <img src="2.jpg" alt="機能説明">
-            </div>
-            <div class="flex-text">
-                <span class="section-label">THEORY</span>
-                <h2>八雲も驚く、<br>理想の姿勢。</h2>
-                <div class="highlight-box">
-                    <p>作業療法士・理学療法士が監修し、オフィスワーカーの腰の悩みを解決するために開発されました。</p>
+    <section class="section-targeting">
+        <div class="reveal">
+            <span class="story-tag" style="color:var(--text-gold); text-align:center;">IS THIS YOU?</span>
+            <h2 style="font-size: 2.5rem; margin-top: 0;">あなたは今、身体の「借金」を<br>背負っていませんか？</h2>
+            <div class="targeting-grid">
+                <div class="target-card">
+                    <h4>PC・スマホへの没頭</h4>
+                    <p>集中するほど、紙や画面に吸い込まれるような前傾姿勢になっていませんか？その姿勢は、あなたが気づかぬうちに腰や首へ「数年分の負担」を蓄積させています。</p>
                 </div>
-                <p style="margin-top: 25px;">
-                    ヒントは「重心移動」。<br>
-                    身体のわずかな動きに反応し、骨盤を常にニュートラルな位置へ。
-                    新幹線でも使われる圧倒的な高反発素材が、あなたの一日を支え抜きます。
-                </p>
+                <div class="target-card">
+                    <h4>長距離の運転・移動</h4>
+                    <p>座り直すたびに途切れる集中力。身体の違和感でふと我に返る。その瞬間、最高の没頭状態（フロー）は断絶され、生産性は静かに損なわれていきます。</p>
+                </div>
+                <div class="target-card">
+                    <h4>翌朝に響く疲労感</h4>
+                    <p>一日を終え、立ち上がった瞬間に感じる腰の重み。その負担を翌日に持ち越していませんか？明日を軽やかに迎えるために、今、座り方から変える必要があります。</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section style="padding-top: 0;">
-        <div class="flex-container" style="flex-direction: row-reverse;">
-            <div class="flex-image">
-                <img src="untitled.jpeg" alt="座ってごしない 使用イメージ">
+    <div class="section-intro">
+        <div class="reveal">
+            <p class="intro-title">
+                何かを成し遂げようと、自分でも気づかないほど<br>
+                根を詰めすぎてはいませんか？<br><br>
+                <span style="color: var(--text-gold); font-weight: 600;">没頭するあなたの身体を、松江の「いたわり」で包みたい。</span><br>
+                それは、文豪をも支えた慈しみの心。
+            </p>
+        </div>
+    </div>
+
+    <div class="section-story">
+        <div class="story-flex reveal">
+            <div class="story-left">
+                <img src="Main_A4.jpg" alt="小泉八雲とセツ">
             </div>
-            <div class="flex-text">
-                <span class="section-label">CRAFTMANSHIP</span>
-                <h2>松江から、<br>世界基準の座り心地を。</h2>
-                <p>
-                    小泉八雲とセツが出会ったまち、島根県松江市。
-                    歴史あるこの街から、最先端のコンディショニング・テクノロジーをお届けします。
-                    4cmの極薄設計が、あらゆる椅子を「特等席」に変えます。
-                </p>
+            <div class="story-right">
+                <span class="story-tag">THE GENESIS</span>
+                <p class="story-quote">「ヘルンさん、あんまり根を詰めんと、<br>ちーとここへ”座ってごしない”」</p>
+                <p>強度の近視により、机に覆いかぶさるように執筆に没頭した小泉八雲（ラフカディオ・ハーン）。そんな夫の身体を案じ、休息を促した妻セツの献身的な愛を、現代のコンディショニング・ギアとして具現化しました。</p>
+                <p>「座ってくださいな」を意味する出雲弁の響き。それは、二人を包んだ穏やかで優しい松江の空気そのものです。文豪の言葉を支えたのは、傍らにいた一人の女性の「いたわり」でした。</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="section-tech">
+        <div class="reveal" style="text-align: center; margin-bottom: 120px;">
+            <span class="tech-tag">PRODUCT DETAILS</span>
+            <h2 style="font-size: 2.8rem; color: var(--brand-navy);">理想の姿勢を、科学する。</h2>
+        </div>
+
+        <div class="tech-row reveal">
+            <img src="logic.jpg" alt="重心移動" class="tech-img">
+            <div class="tech-text">
+                <span class="tech-tag">01. LOGIC</span>
+                <h3>自然な重心移動を助ける</h3>
+                <p>人は座っている間も無意識に重心を動かし負荷を分散します。沈み込みすぎない高反発設計がこの動きを妨げず、理想の姿勢作りを多角的にサポートします。</p>
+                <p>療法士が検証を重ねたこの「硬さ」こそが、長時間の没頭を可能にする鍵です。</p>
+            </div>
+        </div>
+
+        <div class="tech-row reveal">
+            <img src="mesh.jpg" alt="通気性" class="tech-img">
+            <div class="tech-text">
+                <span class="tech-tag">02. MATERIAL</span>
+                <h3>新幹線採用素材「ブレスエアー®」</h3>
+                <p>中材には新幹線座席にも採用される信頼の素材を使用。圧倒的な体圧分散性と驚異的な通気性を両立。ハニカムメッシュ生地との相乗効果により、長時間の使用でも蒸れを抑え、清潔で快適な環境を維持します。</p>
+                <p>汗をかいてもすぐに発散する、夏でも冬でも快適な全天候型シートです。</p>
+            </div>
+        </div>
+
+        <div class="tech-row reveal">
+            <img src="design.jpg" alt="安定性" class="tech-img">
+            <div class="tech-text">
+                <span class="tech-tag">03. STABILITY</span>
+                <h3>ズレを防ぐことが、集中を守る</h3>
+                <p>裏面には強力な滑り止め加工を施しました。椅子の上でお尻が滑ることは、無意識に姿勢を崩し、集中力を削ぐ大きな原因となります。</p>
+                <p>どんな座面でも定位置をキープすることで、正しい骨盤の位置を保ち、あなたのパフォーマンスを強力にバックアップします。</p>
+            </div>
+        </div>
+
+        <div class="tech-row reveal">
+            <img src="clean.jpg" alt="清潔" class="tech-img">
+            <div class="tech-text">
+                <span class="tech-tag">04. HYGIENE</span>
+                <h3>毎日使うからこそ、丸洗いの清潔を</h3>
+                <p>カバーはもちろん、中材までシャワーで丸洗いが可能です。陰干しするだけで速乾し、汚れやニオイを気にせず、常に新品のようなリフレッシュされた状態で身体を預けられます。</p>
+                <p>「洗えること」は、長く愛用いただくためのフジイコーポレーションのこだわりです。</p>
             </div>
         </div>
     </section>
 
-    <div class="cta-section">
-        <div class="price-card">
-            <span class="section-label" style="margin-bottom: 20px;">SHOP NOW</span>
-            <h3>座ってごしない</h3>
-            <div class="price-num">¥11,000<span style="font-size: 1.2rem; color: #999;">（税込）</span></div>
-            <a href="https://forms.gle/gsFDFAZ9dR7z2eDw5" class="btn-main" style="display: block; font-size: 1.3rem;">今すぐ購入する</a>
+    <section class="section-faq reveal">
+        <h2 style="text-align:center; margin-bottom:80px; letter-spacing: 0.3em;">よくあるご質問</h2>
+        <div class="faq-container">
+            <div class="faq-item"><span class="faq-q">既存の椅子に置くだけで良いですか？</span><p class="faq-a">はい。厚さ約4cmの薄型設計ですので、椅子の高さを変えずに座り心地だけを劇的にアップグレードできます。</p></div>
+            <div class="faq-item"><span class="faq-q">お手入れの方法を教えてください。</span><p class="faq-a">カバーは洗濯機、中材はシャワーなどで丸洗いが可能です。非常に速乾性の高い素材です。</p></div>
+            <div class="faq-item"><span class="faq-q">一般的なクッションとの違いは？</span><p class="faq-a">「高反発」素材であることです。沈み込みすぎないため、自然な重心移動を妨げず、姿勢が崩れにくいのが特徴です。</p></div>
+            <div class="faq-item"><span class="faq-q">ギフト用としての発送は可能ですか？</span><p class="faq-a">はい。「相手を想う愛」の贈り物として、敬老の日や誕生日などに大変喜ばれています。</p></div>
+            <div class="faq-item"><span class="faq-q">耐久性はどのくらいですか？</span><p class="faq-a">新幹線座席に採用される耐久性に優れた素材を使用。一般的なウレタンよりへたりにくく長くご愛用いただけます。</p></div>
+            <div class="faq-item"><span class="faq-q">どこで体験できますか？</span><p class="faq-a">島根県松江市のコワーキングスペース「enun」にて実物をご体験いただけます。</p></div>
+            <div class="faq-item"><span class="faq-q">「座ってごしない」の意味は？</span><p class="faq-a">島根県松江市の方言で「座ってくださいな」という意味です。妻セツが夫八雲を労った言葉に由来します。</p></div>
         </div>
-    </div>
+    </section>
 
-    <div class="floating-footer">
-        <div style="color: #fff; font-weight: bold;">座ってごしない / ¥11,000（税込）</div>
-        <a href="https://forms.gle/gsFDFAZ9dR7z2eDw5" class="btn-main" target="_blank">今すぐ購入へ</a>
-    </div>
+    <section class="section-cta reveal">
+        <h2 class="serif" style="font-size: 2.2rem; margin-bottom: 20px;">座面クッション：座ってごしない</h2>
+        <div class="cta-img-flex">
+            <img src="colors.jpg" alt="カラー">
+            <img src="product.jpg" alt="製品">
+        </div>
+        <div class="cta-price">¥11,000 <small style="font-size: 1.2rem; font-weight: 300;">(TAX IN)</small></div>
+        <a href="https://forms.gle/gsFDFAZ9dR7z2eDw5" class="cta-btn">購入ページへ進む</a>
+    </section>
+
+    <section class="section-developer reveal">
+        <div class="dev-photo">
+            <img src="photo 4-243.jpg" alt="小村康平">
+        </div>
+        <div class="dev-info">
+            <span class="tech-tag">DEVELOPER'S VOICE</span>
+            <h2>理学療法士が導いた答え。</h2>
+            <p style="font-weight: 700; margin-bottom: 20px;">認定理学療法士 / アスレティックトレーナー　小村 康平</p>
+            <p>このクッションは単なる座布団ではなく、没頭する人の身体を「調律」するための道具です。高反発がもたらす重心移動の自由こそが、身体への負担を軽減する鍵となります。フジイコーポレーションと共に、理想の座りを追求しました。</p>
+        </div>
+    </section>
+
+    <section class="section-company reveal">
+        <h2 style="font-size: 2rem; margin-bottom: 10px; text-align: center;">運営会社</h2>
+        <table class="company-table">
+            <tr><th>会社名</th><td>株式会社フジイコーポレーション</td></tr>
+            <tr><th>代表者</th><td>代表取締役 藤井 寛幸</td></tr>
+            <tr><th>所在地</th><td>〒690-0845 島根県松江市西茶町40-1 enun2F-1</td></tr>
+            <tr><th>公式サイト</th><td><a href="https://fujiicorporation.co.jp/" target="_blank" style="color: var(--brand-navy);">https://fujiicorporation.co.jp/</a></td></tr>
+            <tr><th>事業内容</th><td>健康経営支援、ビジネスケアラー支援、AI活用による人材定着支援等</td></tr>
+        </table>
+    </section>
 
     <footer>
-        <p>〒690-0845 島根県松江市西茶町40-1 本館2階 enun Room I</p>
-        <p>© 2026 座ってごしない | Conditioning Technology for Professionals</p>
+        &copy; 2026 座ってごしない | Produced by 株式会社フジイコーポレーション.<br>
+        <span style="opacity: 0.4; display: block; margin-top: 15px; font-size: 0.75rem;">※本製品は一般医療機器ではありません。家庭用の姿勢サポート用クッションです。</span>
     </footer>
 
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
