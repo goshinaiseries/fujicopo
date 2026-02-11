@@ -33,26 +33,21 @@
         section { width: 100%; padding: 100px 0; border-bottom: 1px solid #f0f0f0; }
         .container { width: 90%; max-width: 1100px; margin: 0 auto; }
 
-        /* 1. HERO: スマホで全体が見えるように調整 */
+        /* 1. HERO: PC/スマホ画像切り替え */
         .hero { 
             height: 100vh; 
             width: 100vw; 
             position: relative; 
-            overflow: hidden; 
-            background-color: #ffffff; /* 画像の背景に合わせる */
+            background-color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        .hero-img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; /* PC版 */
-            object-position: center; 
-        }
+        .hero-pc { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .hero-sp { display: none; }
 
         .section-tag { color: var(--brand-gold); font-family: 'Cormorant Garamond', serif; letter-spacing: 0.3em; display: block; margin-bottom: 20px; font-size: 0.9rem; text-align: center; }
-        .section-title { font-size: clamp(1.4rem, 4vw, 2.2rem); text-align: center; margin-bottom: 80px; color: var(--text-main); font-weight: 600; }
+        .section-title { font-size: clamp(1.4rem, 4vw, 2.2rem); text-align: center; margin-bottom: 60px; color: var(--text-main); font-weight: 600; }
 
         /* 2. THE GENESIS */
         .section-story { background-color: var(--bg-wash); }
@@ -63,7 +58,7 @@
         .story-quote { font-size: 1.2rem; font-weight: 700; margin-bottom: 20px; line-height: 1.7; }
         .story-body { font-size: 1rem; color: var(--text-sub); line-height: 2.1; }
 
-        /* 3. TARGETING */
+        /* 3. TARGETING (PC版) */
         .section-targeting { background-color: var(--bg-silk); }
         .targeting-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .target-card { background: #fff; padding: 40px; border-radius: 2px; text-align: left; }
@@ -76,12 +71,11 @@
         .tech-text h3 { font-size: 1.4rem; margin-bottom: 15px; border-left: 3px solid var(--brand-gold); padding-left: 15px; }
         .tech-text p { font-size: 1.1rem; line-height: 2.2; color: var(--text-sub); }
 
-        /* 5. DEVELOPMENT STORY (PC & Mobile 対応) */
+        /* 5. DEVELOPMENT STORY */
         .section-developer { background-color: var(--bg-wash); }
         .dev-container { display: flex; gap: 50px; align-items: flex-start; }
         .dev-photos { flex: 0.8; display: flex; flex-direction: column; gap: 30px; }
         .dev-photos img { width: 100%; border-radius: 2px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
-        .supervisor-photo { aspect-ratio: 4 / 3; object-fit: cover; object-position: top center; }
         .dev-info { flex: 1.2; }
         .dev-block { margin-bottom: 60px; }
         .dev-header { font-size: 1.5rem; margin: 0 0 20px 0; font-weight: 700; }
@@ -98,7 +92,7 @@
         .price { font-size: 2.8rem; font-weight: 700; margin: 30px 0; }
         .btn-purchase { display: inline-block; background: var(--text-main); color: #fff; padding: 20px 80px; text-decoration: none; font-weight: 700; border-radius: 2px; font-size: 1.2rem; }
 
-        /* 7. FAQ (7項目) */
+        /* 7. FAQ */
         .section-faq { background-color: #f4f4f2; }
         .faq-item { background: #fff; margin-bottom: 15px; padding: 35px; border-radius: 2px; box-shadow: 0 2px 10px rgba(0,0,0,0.02); text-align: left; }
         .faq-q { font-weight: 700; margin-bottom: 12px; display: block; font-size: 1.1rem; }
@@ -116,25 +110,35 @@
 
         /* MOBILE OPTIMIZATION */
         @media (max-width: 768px) {
-            .hero-img { object-fit: contain; } /* スマホで全体を見せる */
+            .hero-pc { display: none; }
+            .hero-sp { display: block; width: 100%; height: 100%; object-fit: contain; }
+            
+            .section-title br { display: none; } /* デフォルトのタイトル改行をリセット */
+            /* ターゲットセクションのタイトル改行を指定通りに調整 */
+            .target-title-sp { display: block; line-height: 1.6; }
+            .target-title-sp::after { content: "デスクワークや長時間の\A運転による、蓄積する身体の負担。"; white-space: pre; font-size: 1.4rem; display: block; text-align: center; font-weight: 600; }
+            .original-title { display: none; }
+
             .story-flex { flex-direction: column; }
             .story-right { border-left: none; border-top: 1px solid var(--brand-gold); padding: 30px 0 0 0; }
             
-            /* DEVELOPMENT STORY: 写真→文→写真→文 */
             .pc-dev-layout { display: none; }
             .mobile-dev-flow { display: flex; flex-direction: column; width: 100%; text-align: left; }
             .mobile-dev-flow img { width: 100%; margin-bottom: 20px; border-radius: 2px; }
             .mobile-dev-flow .dev-block { margin-bottom: 40px; }
+            .selection-imgs img { width: 100%; }
         }
         @media (min-width: 769px) {
             .mobile-dev-flow { display: none; }
+            .target-title-sp { display: none; }
         }
     </style>
 </head>
 <body>
 
     <div class="hero">
-        <img src="プレゼンテーション1.jpeg" alt="-ごしないシリーズ- 八雲！座ってごしない" class="hero-img">
+        <img src="プレゼンテーション1.jpeg" alt="PC版" class="hero-pc">
+        <img src="sumaho.jpeg" alt="スマホ版" class="hero-sp">
     </div>
 
     <section class="section-story">
@@ -156,7 +160,9 @@
     <section class="section-targeting">
         <div class="container reveal">
             <span class="section-tag">IS THIS YOU?</span>
-            <h2 class="section-title">デスクワークや長時間の運転による、<br>蓄積する身体の負担。</h2>
+            <h2 class="section-title original-title">デスクワークや長時間の運転による、<br>蓄積する身体の負担。</h2>
+            <div class="target-title-sp"></div>
+
             <div class="targeting-grid">
                 <div class="target-card">
                     <h4>PC・スマホへの没頭</h4>
@@ -164,7 +170,7 @@
                 </div>
                 <div class="target-card">
                     <h4>長距離の運転・移動</h4>
-                    <p>座り心地の違和感が集中力を削ぎ、パフォーマンスを落とし、移動の質を損なう原因となります。</p>
+                    <p>座り心地の違和感が集中力を削ぎ、パフォーマンスを落とす原因となります。</p>
                 </div>
                 <div class="target-card">
                     <h4>翌朝まで残る座り疲労</h4>
@@ -181,28 +187,28 @@
             <div class="tech-row">
                 <img src="logic.jpg" alt="重心移動" class="tech-img">
                 <div class="tech-text">
-                    <h3>自然な重心移動を助ける</h3>
-                    <p>人は座っている間も無意識に重心を動かし負荷を分散します。沈み込みすぎない高反発設計が理想の姿勢作りを多角的にサポートします。理学・作業療法士が検証を重ねたこの「硬さ」こそが、鍵です。</p>
+                    <h3>01. 自然な重心移動を助ける</h3>
+                    <p>人は座っている間も無意識に重心を動かし負荷を分散します。沈み込みすぎない高反発設計が理想の姿勢作りを多角的にサポートします。作業・理学療法士が検証を重ねたこの「硬さ」こそが、鍵です。</p>
                 </div>
             </div>
             <div class="tech-row">
                 <img src="mesh.jpg" alt="ブレスエアー" class="tech-img">
                 <div class="tech-text">
-                    <h3>新幹線採用素材「ブレスエアー®」</h3>
+                    <h3>02. 新幹線採用素材「ブレスエアー®」</h3>
                     <p>中材には新幹線座席にも採用される信頼の素材を使用。圧倒的な体圧分散性と驚異的な通気性を両立。夏でも冬でも快適な全天候型シートです。</p>
                 </div>
             </div>
             <div class="tech-row">
                 <img src="design.jpg" alt="滑り止め" class="tech-img">
                 <div class="tech-text">
-                    <h3>ズレを防ぐことが、集中を守る</h3>
+                    <h3>03. ズレを防ぐことが、集中を守る</h3>
                     <p>裏面には強力な滑り止め加工を施しました。椅子の上でお尻が滑ることは、姿勢を崩し、集中力を削ぐ大きな原因となります。定位置をキープすることで正しい骨盤の位置を保ちます。</p>
                 </div>
             </div>
             <div class="tech-row">
                 <img src="clean.jpg" alt="丸洗い" class="tech-img">
                 <div class="tech-text">
-                    <h3>毎日使うからこそ、丸洗いの清潔を</h3>
+                    <h3>04. 毎日使うからこそ、丸洗いの清潔を</h3>
                     <p>シャワーで丸洗いが可能です。陰干しするだけで速乾し、汚れやニオイを気にせず、常にリフレッシュされた状態で身体を預けられます。</p>
                 </div>
             </div>
@@ -216,7 +222,7 @@
             <div class="pc-dev-layout dev-container">
                 <div class="dev-photos">
                     <img src="hero.jpg" alt="開発風景">
-                    <img src="photo 4-243.jpg" alt="監修風景" class="supervisor-photo">
+                    <img src="photo 4-243.jpg" alt="監修風景">
                 </div>
                 <div class="dev-info">
                     <div class="dev-block">
@@ -241,7 +247,7 @@
                     <h3 class="dev-header">専門家と老舗メーカーが導いた理想のクッション</h3>
                     <div class="dev-body-text">
                         <p>安心安全な原料と心地良い寝姿勢にこだわった寝具を製造販売している老舗寝具メーカー「浅尾繊維工業」と、㈱フジイコーポレーションの理学療法士・作業療法士が幾度もの試作と試験を重ねて作り上げた、理想のチェアクッション。</p>
-                        <p>新幹線のシートにも採用される高機能素材を使用し、お尻にかかる体圧を優しく、かつ的確に分散。座り姿勢そのものにアプローチし、長時間の利用でも動作を妨げない、身体の自由を尊重するデザインを追求しました。</p>
+                        <p>新幹線のシートにも採用される高機能素材を使用し、お尻にかかる体圧を優しく、かつ維持。座り姿勢そのものにアプローチし、長時間の利用でも動作を妨げない、身体の自由を尊重するデザインを追求しました。</p>
                         <p>健康経営支援事業（みんなの右腕）を手がける島根の㈱フジイコーポレーションと創業145年の老舗寝具メーカー浅尾繊維工業株式会社が小泉八雲の物語と掛け合わせ、リブランディングし誕生しました。</p>
                     </div>
                 </div>
@@ -259,7 +265,6 @@
         <div class="container reveal">
             <span class="section-tag">PRODUCT SELECTION</span>
             <div class="selection-box">
-                <p style="color: var(--brand-gold); font-weight: 700; margin-bottom: 5px;">-ごしないシリーズ-</p>
                 <h2 style="margin-top: 0;">八雲！座ってごしない</h2>
                 <div class="selection-imgs">
                     <img src="colors.jpg" alt="カラー展開">
@@ -271,9 +276,8 @@
                     <tr><th>生産国</th><td>日本</td></tr>
                     <tr><th>表生地</th><td>ポリエステル100％（ソフトハニカム）</td></tr>
                     <tr><th>裏生地</th><td>ポリエステル100％（すべり止め加工）</td></tr>
-                    <tr><th>中材</th><td>合成繊維（ポリエーテルエステル系繊維）100％</td></tr>
+                    <tr><th>中材</th><td>合成繊維100％（ブレスエアー®）</td></tr>
                 </table>
-                <p style="font-size: 0.9rem; color: #888;">※カラーは購入フォームよりお選びいただけます。</p>
                 <p class="price">¥11,000 <small style="font-size: 1rem; color: #888;">(TAX IN)</small></p>
                 <a href="https://forms.gle/gsFDFAZ9dR7z2eDw5" class="btn-purchase">購入ページへ進む</a>
             </div>
@@ -287,10 +291,6 @@
             <div class="faq-container">
                 <div class="faq-item"><span class="faq-q">既存の椅子に置くだけで良いですか？</span><p class="faq-a">はい。厚さ約4cmの薄型設計ですので、椅子の高さを変えずに座り心地を向上できます。</p></div>
                 <div class="faq-item"><span class="faq-q">お手入れの方法を教えてください。</span><p class="faq-a">丸洗いが可能です。中材はシャワーで流せ、非常に速乾性に優れています。</p></div>
-                <div class="faq-item"><span class="faq-q">一般的なクッションとの違いは？</span><p class="faq-a">沈み込みすぎない「高反発」素材であることです。自然な重心移動を妨げず、姿勢が崩れにくいのが特徴です。</p></div>
-                <div class="faq-item"><span class="faq-q">ギフト用としての発送は可能ですか？</span><p class="faq-a">はい。贈り物に大変喜ばれています。詳細は購入フォームよりご確認ください。</p></div>
-                <div class="faq-item"><span class="faq-q">耐久性はどのくらいですか？</span><p class="faq-a">新幹線座席にも採用される素材を使用。へたりにくく、長くご愛用いただけます。</p></div>
-                <div class="faq-item"><span class="faq-q">どこで体験できますか？</span><p class="faq-a">島根県松江市のコワーキングスペース「enun」にて実物をご体験いただけます。</p></div>
                 <div class="faq-item"><span class="faq-q">「座ってごしない」の意味は？</span><p class="faq-a">松江の方言で「座ってくださいな」という意味です。小泉八雲の妻セツが夫を労った言葉に由来します。</p></div>
             </div>
         </div>
@@ -304,7 +304,6 @@
                 <tr><th>会社名</th><td>株式会社フジイコーポレーション</td></tr>
                 <tr><th>代表者</th><td>代表取締役 藤井 寛幸</td></tr>
                 <tr><th>所在地</th><td>〒690-0845 島根県松江市西茶町40-1 enun2F-I</td></tr>
-                <tr><th>事業内容</th><td>健康経営支援、ビジネスケアラー支援、AI活用による人材定着支援等</td></tr>
                 <tr><th>共同開発</th><td>浅尾繊維工業株式会社（創業145年）</td></tr>
             </table>
         </div>
