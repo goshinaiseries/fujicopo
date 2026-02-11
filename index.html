@@ -40,7 +40,7 @@
         .section-tag { color: var(--brand-gold); font-family: 'Cormorant Garamond', serif; letter-spacing: 0.3em; display: block; margin-bottom: 20px; font-size: 0.9rem; text-align: center; }
         .section-title { font-size: clamp(1.4rem, 4vw, 2.2rem); text-align: center; color: var(--text-main); font-weight: 600; margin-bottom: 80px; }
 
-        /* 2. THE GENESIS (ロゴを左に引き寄せ) */
+        /* 2. THE GENESIS */
         .section-story { background-color: var(--bg-wash); }
         .story-flex { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
         .story-left { 
@@ -49,21 +49,21 @@
             background: #fff; 
             padding: 30px; 
             box-shadow: 0 5px 20px rgba(0,0,0,0.02);
-            margin-left: -20px; /* 右ズレ解消のための補正 */
+            margin-left: -20px; /* PCでの左引き寄せ補正 */
         }
         .story-left img { width: 100%; height: auto; display: block; }
         .story-right { flex: 1.2; border-left: 1px solid var(--brand-gold); padding-left: 30px; text-align: left; }
         .story-quote { font-size: 1.2rem; font-weight: 700; margin-bottom: 20px; line-height: 1.7; }
         .story-body { font-size: 1rem; color: var(--text-sub); line-height: 2.1; }
 
-        /* 3. TARGETING (タイトルフォント微調整) */
+        /* 3. TARGETING */
         .section-targeting { background-color: var(--bg-silk); }
         .target-title { 
-            font-size: clamp(1.2rem, 3.5vw, 2rem); /* 少し小さく設定し収まりを改善 */
+            font-size: clamp(1.1rem, 3.5vw, 1.8rem); 
             text-align: center; 
             color: var(--text-main); 
             font-weight: 600; 
-            margin-bottom: 80px; 
+            margin-bottom: 60px; 
             line-height: 1.6;
         }
         .targeting-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 20px; }
@@ -77,7 +77,7 @@
         .tech-text h3 { font-size: 1.4rem; margin-bottom: 15px; border-left: 3px solid var(--brand-gold); padding-left: 15px; }
         .tech-text p { font-size: 1.1rem; line-height: 2.2; color: var(--text-sub); }
 
-        /* 5. DEVELOPMENT STORY (足を消す設定を維持) */
+        /* 5. DEVELOPMENT STORY */
         .section-developer { background-color: var(--bg-wash); }
         .dev-container { display: flex; gap: 50px; align-items: flex-start; }
         .dev-photos { flex: 0.8; display: flex; flex-direction: column; gap: 30px; }
@@ -122,12 +122,19 @@
             .hero-pc { display: none; }
             .hero-sp { display: block; width: 100%; height: 100%; object-fit: contain; }
             
-            .story-left { margin-left: 0; } /* スマホでは左寄せ解除 */
-            .target-title { font-size: 1.25rem; margin-bottom: 40px; }
+            /* スマホ版ロゴの右ズレを解消 */
+            .story-left { 
+                margin-left: -5% !important; 
+                width: 105% !important; 
+                padding: 20px !important;
+                box-sizing: border-box;
+            }
+
+            .target-title { font-size: 1.2rem; margin-bottom: 40px; }
             .target-br-sp { display: block; }
 
-            .story-flex { flex-direction: column; }
-            .story-right { border-left: none; border-top: 1px solid var(--brand-gold); padding: 30px 0 0 0; }
+            .story-flex { flex-direction: column; align-items: center; }
+            .story-right { border-left: none; border-top: 1px solid var(--brand-gold); padding: 30px 0 0 0; width: 100%; }
             
             .pc-dev-layout { display: none; }
             .mobile-dev-flow { display: flex; flex-direction: column; width: 100%; text-align: left; }
@@ -251,10 +258,10 @@
             <div class="mobile-dev-flow">
                 <img src="hero.jpg" alt="開発風景">
                 <div class="dev-block">
-                    <h3 class="dev-header">専門家と老舗メーカーが導いた理想의クッション</h3>
+                    <h3 class="dev-header">専門家と老舗メーカーが導いた理想のクッション</h3>
                     <div class="dev-body-text">
                         <p>安心安全な原料と心地良い寝姿勢にこだわった寝具を製造販売している老舗寝具メーカー「浅尾繊維工業」と、㈱フジイコーポレーションの理学療法士・作業療法士が幾度もの試作と試験を重ねて作り上げた、理想のチェアクッション。</p>
-                        <p>新幹線のシートにも採用される高機能素材を使用し、お尻にかかる体圧を優しく、かつ的確に分散。座り姿勢そのものにアプローチし、長時間の利用でも動作を妨げない、身体の自由を尊重するデザインを追求しました。</p>
+                        <p>新幹線のシートにも採用される高機能素材を使用し、お尻にかかる体圧を優しく、かつ的な分散。座り姿勢そのものにアプローチし、長時間の利用でも動作を妨げない、身体の自由を尊重するデザインを追求しました。</p>
                         <p>健康経営支援事業（みんなの右腕）を手がける島根の㈱フジイコーポレーションと創業145年の老舗寝具メーカー浅尾繊維工業株式会社が小泉八雲の物語と掛け合わせ、リブランディングし誕生しました。</p>
                     </div>
                 </div>
