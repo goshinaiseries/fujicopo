@@ -32,7 +32,7 @@
         section { width: 100%; padding: 100px 0; border-bottom: 1px solid #f0f0f0; }
         .container { width: 90%; max-width: 1100px; margin: 0 auto; }
 
-        /* 1. HERO: PC/スマホ切り替え */
+        /* 1. HERO */
         .hero { height: 100vh; width: 100vw; position: relative; overflow: hidden; background-color: #ffffff; display: flex; align-items: center; justify-content: center; }
         .hero-pc { width: 100%; height: 100%; object-fit: cover; display: block; }
         .hero-sp { display: none; }
@@ -40,58 +40,55 @@
         .section-tag { color: var(--brand-gold); font-family: 'Cormorant Garamond', serif; letter-spacing: 0.3em; display: block; margin-bottom: 20px; font-size: 0.9rem; text-align: center; }
         .section-title { font-size: clamp(1.4rem, 4vw, 2.2rem); text-align: center; color: var(--text-main); font-weight: 600; margin-bottom: 80px; }
 
-        /* 2. THE GENESIS: ロゴ左寄せ補正 */
+        /* 2. THE GENESIS */
         .section-story { background-color: var(--bg-wash); }
         .story-flex { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
         .story-left { 
-            flex: 1; 
-            min-width: 350px; 
-            background: #fff; 
-            padding: 30px; 
+            flex: 1; min-width: 350px; background: #fff; padding: 30px; 
             box-shadow: 0 5px 20px rgba(0,0,0,0.02);
-            margin-left: -20px; /* PCでの左引き寄せ補正 */
-            box-sizing: border-box;
+            margin-left: -20px; box-sizing: border-box;
         }
         .story-left img { width: 100%; height: auto; display: block; }
         .story-right { flex: 1.2; border-left: 1px solid var(--brand-gold); padding-left: 30px; text-align: left; }
         .story-quote { font-size: 1.2rem; font-weight: 700; margin-bottom: 20px; line-height: 1.7; }
         .story-body { font-size: 1rem; color: var(--text-sub); line-height: 2.1; }
 
-        /* 3. TARGETING: タイトルフォントと余白 */
+        /* 3. TARGETING */
         .section-targeting { background-color: var(--bg-silk); }
         .target-title { 
             font-size: clamp(1.1rem, 3.5vw, 1.8rem); 
-            text-align: center; 
-            color: var(--text-main); 
-            font-weight: 600; 
-            margin-bottom: 60px; 
-            line-height: 1.6;
+            text-align: center; color: var(--text-main); font-weight: 600; 
+            margin-bottom: 60px; line-height: 1.6;
         }
         .targeting-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 20px; }
         .target-card { background: #fff; padding: 40px; border-radius: 2px; text-align: left; height: 100%; }
         .target-card h4 { color: var(--brand-gold); font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid var(--brand-gold); display: inline-block; }
 
-        /* 4. PRODUCT DETAILS */
+        /* 4. PRODUCT DETAILS (全4項目掲載) */
         .tech-row { display: flex; flex-direction: column; align-items: center; margin-bottom: 100px; text-align: center; }
         .tech-img { width: 100%; max-width: 800px; border-radius: 2px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 30px; }
         .tech-text { text-align: left; width: 100%; max-width: 800px; }
         .tech-text h3 { font-size: 1.4rem; margin-bottom: 15px; border-left: 3px solid var(--brand-gold); padding-left: 15px; }
         .tech-text p { font-size: 1.1rem; line-height: 2.2; color: var(--text-sub); }
 
-        /* 5. DEVELOPMENT STORY: 足カット & 縦線 */
+        /* 5. DEVELOPMENT STORY (監修者情報最新版) */
         .section-developer { background-color: var(--bg-wash); }
         .dev-container { display: flex; gap: 50px; align-items: flex-start; }
         .dev-photos { flex: 0.8; display: flex; flex-direction: column; gap: 30px; }
         .dev-photos img { width: 100%; border-radius: 2px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
-        .supervisor-photo { aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 15%; } /* PC足カット */
+        .supervisor-photo { aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 15%; }
 
         .dev-info { flex: 1.2; }
         .dev-block { margin-bottom: 60px; }
         .dev-header { font-size: 1.5rem; margin: 0 0 20px 0; font-weight: 700; }
         .dev-body-text { font-size: 1rem; color: var(--text-sub); line-height: 2.1; }
-        .supervisor-msg { font-size: 1rem; padding-left: 20px; border-left: 3px solid var(--brand-gold); line-height: 2.1; color: var(--text-main); margin: 0; }
+        
+        .sup-title-en { color: var(--brand-gold); font-family: 'Cormorant Garamond', serif; letter-spacing: 0.2em; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+        .sup-name { font-size: 1.5rem; margin: 0 0 10px 0; font-weight: 700; letter-spacing: 0.1em; }
+        .sup-sub { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 5px; font-weight: 600; display: block; }
+        .supervisor-msg { font-size: 1rem; padding-left: 20px; border-left: 3px solid var(--brand-gold); line-height: 2.1; color: var(--text-main); margin: 15px 0 0 0; }
 
-        /* 6. PRODUCT SELECTION: 写真2枚 */
+        /* 6. PRODUCT SELECTION */
         .selection-box { background: var(--bg-wash); padding: 60px 5%; text-align: center; }
         .selection-imgs { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
         .selection-imgs img { width: 45%; min-width: 280px; border-radius: 2px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
@@ -101,14 +98,14 @@
         .price { font-size: 2.8rem; font-weight: 700; margin: 30px 0; }
         .btn-purchase { display: inline-block; background: var(--text-main); color: #fff; padding: 20px 80px; text-decoration: none; font-weight: 700; border-radius: 2px; font-size: 1.2rem; }
 
-        /* 7. FAQ: 7項目 */
+        /* 7. FAQ (7項目) */
         .section-faq { background-color: #f4f4f2; }
         .faq-item { background: #fff; margin-bottom: 15px; padding: 35px; border-radius: 2px; box-shadow: 0 2px 10px rgba(0,0,0,0.02); text-align: left; }
         .faq-q { font-weight: 700; margin-bottom: 12px; display: block; font-size: 1.1rem; }
         .faq-q::before { content: "Q. "; color: var(--brand-gold); }
         .faq-a { color: var(--text-sub); font-size: 1rem; margin: 0; line-height: 1.9; }
 
-        /* 8. OVERVIEW: 詳細完備 */
+        /* 8. OVERVIEW (詳細完備) */
         .section-overview { background-color: #fff; }
         .company-table { width: 100%; max-width: 850px; margin: 0 auto; border-collapse: collapse; text-align: left; }
         .company-table th, .company-table td { padding: 20px; border-bottom: 1px solid #eee; }
@@ -118,35 +115,23 @@
         .fixed-cta { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.95); padding: 15px 0; z-index: 1000; text-align: center; border-top: 1px solid #eee; backdrop-filter: blur(5px); }
         .fixed-btn { border: 1.5px solid var(--text-main); padding: 12px 60px; text-decoration: none; color: var(--text-main); font-weight: 700; border-radius: 50px; }
 
-        /* MOBILE OPTIMIZATION: ロゴ中央揃え & 改行 */
+        /* MOBILE */
         @media (max-width: 768px) {
             .hero-pc { display: none; }
             .hero-sp { display: block; width: 100%; height: 100%; object-fit: contain; }
-            
             .story-flex { flex-direction: column; align-items: center; text-align: center; width: 100%; }
-            .story-left { 
-                margin-left: 0 !important; 
-                width: 90% !important; 
-                min-width: unset !important;
-                padding: 15px !important;
-                display: flex; justify-content: center; align-items: center;
-            }
+            .story-left { margin-left: 0 !important; width: 90% !important; min-width: unset !important; padding: 15px !important; display: flex; justify-content: center; align-items: center; }
             .story-left img { width: 100%; max-width: 300px; height: auto; }
             .story-right { border-left: none; border-top: 1px solid var(--brand-gold); padding: 30px 0 0 0; width: 100%; text-align: left; }
-
             .target-title { font-size: 1.25rem; margin-bottom: 40px; }
             .target-br-sp { display: block; }
-
             .pc-dev-layout { display: none; }
             .mobile-dev-flow { display: flex; flex-direction: column; width: 100%; text-align: left; }
             .mobile-dev-flow img { width: 100%; margin-bottom: 20px; border-radius: 2px; }
             .mobile-dev-flow .dev-block { margin-bottom: 40px; }
             .selection-imgs img { width: 100%; }
         }
-        @media (min-width: 769px) {
-            .mobile-dev-flow { display: none; }
-            .target-br-sp { display: none; }
-        }
+        @media (min-width: 769px) { .mobile-dev-flow { display: none; } .target-br-sp { display: none; } }
     </style>
 </head>
 <body>
@@ -237,7 +222,7 @@
             <div class="pc-dev-layout dev-container">
                 <div class="dev-photos">
                     <img src="hero.jpg" alt="開発風景">
-                    <img src="photo 4-243.jpg" alt="監修風景" class="supervisor-photo">
+                    <img src="photo 4-243.jpg" alt="監修者" class="supervisor-photo">
                 </div>
                 <div class="dev-info">
                     <div class="dev-block">
@@ -249,8 +234,10 @@
                         </div>
                     </div>
                     <div class="dev-block">
-                        <h3 class="dev-header" style="font-size: 1.25rem;">製品監修 小村 康平</h3>
-                        <span style="color: var(--brand-gold); font-size: 0.85rem; display: block; margin-bottom: 15px; font-weight: 600;">（認定理学療法士 / 公認アスレティックトレーナー）</span>
+                        <span class="sup-title-en">SUPERVISED BY</span>
+                        <span class="sup-sub">島根大学大学院 人間社会科学研究科</span>
+                        <h3 class="sup-name">小村 康平</h3>
+                        <span style="color: var(--brand-gold); font-size: 0.85rem; display: block; font-weight: 600;">（認定理学療法士 / 公認アスレティックトレーナー）</span>
                         <p class="supervisor-msg">「動作の専門家の視点から、長時間のデスクワークにおける骨盤の安定性と体圧分散を徹底的に追求しました。このクッションは、働く身体を整えるための『日常のパートナー』です。」</p>
                     </div>
                 </div>
@@ -262,14 +249,16 @@
                     <h3 class="dev-header">専門家と老舗メーカーが導いた理想のクッション</h3>
                     <div class="dev-body-text">
                         <p>安心安全な原料と心地良い寝姿勢にこだわった寝具を製造販売している老舗寝具メーカー「浅尾繊維工業」と、㈱フジイコーポレーションの理学療法士・作業療法士が幾度もの試作と試験を重ねて作り上げた、理想のチェアクッション。</p>
-                        <p>新幹線のシートにも採用される高機能素材を使用し、お尻にかかる体圧を優しく、かつ的確に分散。座り姿勢そのものにアプローチし、長時間の利用でも動作を妨げない、身体の自由を尊重するデザインを追求しました。</p>
+                        <p>新幹線のシートにも採用される高機能素材を使用し、お尻にかかる体圧を優しく、かつ的な分散。座り姿勢そのものにアプローチし、長時間の利用でも動作を妨げない、身体の自由を尊重するデザインを追求しました。</p>
                         <p>健康経営支援事業（みんなの右腕）を手がける島根の㈱フジイコーポレーションと創業145年の老舗寝具メーカー浅尾繊維工業株式会社が小泉八雲の物語と掛け合わせ、リブランディングし誕生しました。</p>
                     </div>
                 </div>
                 <img src="photo 4-243.jpg" alt="監修者" class="supervisor-photo">
                 <div class="dev-block">
-                    <h3 class="dev-header">製品監修 小村 康平</h3>
-                    <span style="color: var(--brand-gold); font-size: 0.85rem; display: block; margin-bottom: 10px; font-weight: 600;">（認定理学療法士 / 公認アスレティックトレーナー）</span>
+                    <span class="sup-title-en">SUPERVISED BY</span>
+                    <span class="sup-sub">島根大学大学院 人間社会科学研究科</span>
+                    <h3 class="sup-name">小村 康平</h3>
+                    <span style="color: var(--brand-gold); font-size: 0.85rem; display: block; font-weight: 600; margin-bottom: 10px;">（認定理学療法士 / 公認アスレティックトレーナー）</span>
                     <p class="supervisor-msg">「動作の専門家の視点から、長時間のデスクワークにおける骨盤の安定性と体圧分散を徹底的に追求しました。このクッションは、働く身体を整えるための『日常のパートナー』です。」</p>
                 </div>
             </div>
@@ -307,11 +296,11 @@
             <div class="faq-container">
                 <div class="faq-item"><span class="faq-q">既存の椅子に置くだけで良いですか？</span><p class="faq-a">はい。厚さ約4cmの薄型設計ですので、椅子の高さを変えずに座り心地を向上できます。</p></div>
                 <div class="faq-item"><span class="faq-q">お手入れの方法を教えてください。</span><p class="faq-a">丸洗いが可能です。中材はシャワーで流せ、非常に速乾性に優れています。</p></div>
-                <div class="faq-item"><span class="faq-q">一般的なクッションとの違いは？</span><p class="faq-a">沈み込みすぎない「高反発」素材であることです。自然な重心移動を妨げず、姿勢が崩れにくいのが特徴です。</p></div>
-                <div class="faq-item"><span class="faq-q">ギフト用としての発送は可能ですか？</span><p class="faq-a">はい。贈り物に大変喜ばれています。詳細は購入フォームよりご確認ください。</p></div>
+                <div class="faq-item"><span class="faq-q">一般的なクッションとの違いは？</span><p class="faq-a">沈み込みすぎない「高反発」素材です。自然な重心移動を妨げず、姿勢を維持します。</p></div>
+                <div class="faq-item"><span class="faq-q">ギフト用としての発送は可能ですか？</span><p class="faq-a">はい。贈り物に大変喜ばれています。</p></div>
                 <div class="faq-item"><span class="faq-q">耐久性はどのくらいですか？</span><p class="faq-a">新幹線座席にも採用される素材を使用。へたりにくく、長くご愛用いただけます。</p></div>
                 <div class="faq-item"><span class="faq-q">どこで体験できますか？</span><p class="faq-a">島根県松江市のコワーキングスペース「enun」にて実物をご体験いただけます。</p></div>
-                <div class="faq-item"><span class="faq-q">「座ってごしない」の意味は？</span><p class="faq-a">松江の方言で「座ってくださいな」という意味です。小泉八雲の妻セツが夫を労った言葉に由来します。</p></div>
+                <div class="faq-item"><span class="faq-q">「座ってごしない」の意味は？</span><p class="faq-a">松江の方言で「座ってくださいな」という意味です。</p></div>
             </div>
         </div>
     </section>
