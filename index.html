@@ -8,7 +8,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,500&family=Noto+Serif+JP:wght@200;300;400;600;700&display=swap');
         
         :root {
-            --brand-gold: linear-gradient(135deg, #b8860b 0%, #e6b422 50%, #b8860b 100%);
+            --brand-gold: #c5a059;
             --text-gold: #c5a059;
             --bg-wash: #fdfdfb; 
             --bg-silk: #f4f4f2; 
@@ -18,120 +18,97 @@
             --line-gold: rgba(184, 134, 11, 0.4);
         }
 
-        body { font-family: 'Noto Serif JP', serif; margin: 0; color: var(--text-main); line-height: 2.3; background-color: var(--bg-white); overflow-x: hidden; padding-bottom: 100px; }
+        body { font-family: 'Noto Serif JP', serif; margin: 0; color: var(--text-main); line-height: 2.1; background-color: var(--bg-white); overflow-x: hidden; padding-bottom: 100px; }
         
-        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 1.5s ease-out, transform 1.5s ease-out; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 1.2s ease-out, transform 1.2s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
         /* 1. HERO */
-        .hero { height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-        .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
-        .hero-bg img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.9); }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.05); z-index: 2; }
-        
-        .hero-content { position: relative; z-index: 3; width: 90%; max-width: 1200px; text-align: center; color: var(--text-main); }
-        .hero-collab { display: inline-block; background: rgba(255, 255, 255, 0.9); padding: 10px 30px; border-radius: 2px; margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .hero-collab p { margin: 0; font-size: 0.85rem; letter-spacing: 0.15em; font-weight: 700; color: var(--text-main); }
-        
-        .hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text-gold); font-weight: 600; letter-spacing: 0.4em; margin-bottom: 20px; }
-        .hero-copy h1 { font-size: clamp(1.8rem, 6vw, 4rem); letter-spacing: 0.1em; font-weight: 700; line-height: 1.3; margin: 0; text-shadow: 0 0 20px rgba(255,255,255,0.8); }
-        
-        .hero-alliance { margin-top: 50px; padding: 25px; border-top: 1px solid var(--text-gold); border-bottom: 1px solid var(--text-gold); display: inline-block; background: rgba(255,255,255,0.7); backdrop-filter: blur(5px); }
-        .hero-alliance p { margin: 0; font-size: clamp(0.7rem, 2vw, 1rem); letter-spacing: 0.1em; font-weight: 700; }
+        .hero { height: 100vh; width: 100vw; position: relative; overflow: hidden; background-color: #fff; }
+        .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 
         section { padding: 120px 5%; border-bottom: 1px solid #f0f0f0; }
-        .section-tag { color: var(--text-gold); font-family: 'Cormorant Garamond', serif; letter-spacing: 0.4em; display: block; margin-bottom: 20px; font-size: 1rem; text-align: center; }
-        .section-title { font-size: clamp(1.6rem, 5vw, 2.6rem); text-align: center; margin-bottom: 80px; color: var(--text-main); font-weight: 600; line-height: 1.6; }
+        .section-tag { color: var(--text-gold); font-family: 'Cormorant Garamond', serif; letter-spacing: 0.5em; display: block; margin-bottom: 25px; font-size: 0.9rem; text-align: center; }
+        .section-title { font-size: clamp(1.5rem, 4vw, 2.2rem); text-align: center; margin-bottom: 80px; color: var(--text-main); font-weight: 600; letter-spacing: 0.05em; }
 
-        /* 2. THE GENESIS: テキストの底上げと垂直中央揃え */
+        /* 2. THE GENESIS */
         .section-story { background-color: var(--bg-wash); }
-        .story-flex { display: flex; align-items: center; justify-content: center; gap: 80px; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; }
-        .story-left { flex: 1; min-width: 350px; }
-        .story-left img { width: 100%; border-radius: 2px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
-        .story-right { flex: 1.3; border-left: 1px solid var(--text-gold); padding: 20px 0 20px 60px; text-align: left; display: flex; flex-direction: column; justify-content: center; }
-        .story-quote { font-size: clamp(1.5rem, 4.5vw, 1.85rem); font-weight: 700; margin-bottom: 35px; line-height: 1.7; color: var(--text-main); letter-spacing: 0.05em; }
-        .story-body { font-size: 1.15rem; color: var(--text-sub); line-height: 2.3; }
+        .story-flex { display: flex; align-items: center; justify-content: center; gap: 60px; max-width: 1100px; margin: 0 auto; flex-wrap: wrap; }
+        .story-left { flex: 1; min-width: 350px; background: #fff; padding: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.02); }
+        .story-left img { width: 100%; height: auto; object-fit: contain; }
+        .story-right { flex: 1.2; border-left: 1px solid var(--text-gold); padding: 10px 0 10px 50px; text-align: left; }
+        .story-quote { font-size: clamp(1.3rem, 3.5vw, 1.7rem); font-weight: 700; margin-bottom: 30px; line-height: 1.7; color: var(--text-main); }
 
         /* 3. TARGETING */
         .section-targeting { background-color: var(--bg-silk); }
         .targeting-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .target-card { background: #fff; padding: 50px 40px; border: 1px solid #eee; border-radius: 2px; }
-        .target-card h4 { color: var(--text-gold); font-size: 1.3rem; margin-bottom: 25px; border-bottom: 1px solid var(--line-gold); display: inline-block; padding-bottom: 5px; }
-        .target-card p { font-size: 1rem; color: var(--text-sub); text-align: left; }
+        .target-card { background: #fff; padding: 60px 45px; border-radius: 2px; }
+        .target-card h4 { color: var(--text-gold); font-size: 1.25rem; margin: 0 0 25px 0; border-bottom: 1px solid var(--line-gold); display: inline-block; padding-bottom: 8px; }
 
-        /* Intro */
-        .section-intro { background-color: var(--bg-wash); text-align: center; padding: 120px 5%; position: relative; border-bottom: none; }
-        .section-intro::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 1px; height: 100px; background: var(--line-gold); }
-        .intro-title { font-size: clamp(1.4rem, 4vw, 2.2rem); font-weight: 400; letter-spacing: 0.1em; margin-bottom: 40px; }
-        .intro-text { max-width: 900px; margin: 0 auto; color: var(--text-sub); font-size: 1.15rem; }
+        /* 4. PRODUCT DETAILS: 説明文を大きく強調 */
+        .tech-row { display: flex; flex-direction: column; align-items: center; margin-bottom: 140px; max-width: 1000px; margin-left: auto; margin-right: auto; text-align: center; }
+        .tech-img { width: 100%; max-width: 850px; height: auto; border-radius: 2px; box-shadow: 0 15px 50px rgba(0,0,0,0.05); margin-bottom: 45px; }
+        .tech-tag { color: var(--text-gold); font-weight: 700; font-family: 'Cormorant Garamond', serif; letter-spacing: 0.3em; display: block; margin-bottom: 15px; font-size: 0.95rem; }
+        .tech-text p { font-size: 1.15rem; line-height: 2.3; color: var(--text-sub); max-width: 820px; }
 
-        /* 4. PRODUCT DETAILS */
-        .tech-row { display: flex; flex-direction: column; align-items: center; margin-bottom: 150px; max-width: 1200px; margin-left: auto; margin-right: auto; text-align: center; }
-        .tech-img-container { width: 100%; margin-bottom: 50px; }
-        .tech-img { width: 100%; max-width: 1100px; height: auto; border-radius: 2px; box-shadow: 0 20px 50px rgba(0,0,0,0.06); object-fit: contain; }
-        .tech-text { max-width: 800px; }
-        .tech-tag { color: var(--text-gold); font-weight: 700; font-family: 'Cormorant Garamond', serif; letter-spacing: 0.3em; display: block; margin-bottom: 15px; }
-        .tech-text h3 { font-size: 2rem; margin: 0 0 25px 0; color: var(--text-main); }
-
-        /* 5. SELECTION */
-        .section-selection { background-color: var(--bg-silk); text-align: center; }
-        .selection-box { background: #fff; padding: 80px 5%; border: 1px solid #e0e0d0; max-width: 1000px; margin: 0 auto; border-radius: 4px; }
-        .product-name { font-size: clamp(2rem, 5vw, 2.6rem); color: var(--text-main); font-weight: 700; margin: 0; letter-spacing: 0.1em; }
-        .product-sub { color: var(--text-gold); font-size: 1.2rem; margin-bottom: 50px; display: block; font-weight: 600; }
-        .selection-imgs { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; margin-bottom: 50px; }
-        .selection-imgs img { width: 45%; max-width: 450px; border: 1px solid #eee; border-radius: 2px; }
-        .price { font-size: 3.2rem; font-weight: 700; margin-bottom: 40px; color: var(--text-main); }
-        .btn-large { display: inline-block; background: var(--brand-gold); color: #fff; padding: 22px 100px; text-decoration: none; font-weight: 700; border-radius: 4px; font-size: 1.3rem; transition: 0.3s; box-shadow: 0 5px 20px rgba(184, 134, 11, 0.2); }
-
-        /* 6. DEVELOPMENT STORY: タイトル改行の保護 */
+        /* 5. DEVELOPMENT STORY: 写真を少し小さくし、テキストと垂直方向に整列 */
         .section-developer { background-color: var(--bg-wash); }
-        .dev-flex { display: flex; align-items: flex-start; gap: 60px; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; }
-        .dev-photo { flex: 1; min-width: 350px; }
-        .dev-photo img { width: 100%; border-radius: 2px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
-        .dev-info { flex: 1.2; text-align: left; }
-        .dev-title { font-size: clamp(1.4rem, 3.5vw, 2rem); color: var(--text-main); margin: 0 0 30px 0; border-bottom: 1px solid var(--text-gold); display: inline-block; padding-bottom: 10px; line-height: 1.5; }
-        .dev-title-wrap { display: inline-block; white-space: nowrap; } /* 改行禁止用 */
-        .dev-text { font-size: 1.05rem; color: var(--text-sub); line-height: 2.2; }
+        .dev-flex { display: flex; align-items: center; gap: 70px; max-width: 1100px; margin: 0 auto; flex-wrap: wrap; }
+        .dev-photos { flex: 0.9; min-width: 350px; display: flex; flex-direction: column; gap: 30px; }
+        .dev-photos img { width: 100%; max-width: 450px; border-radius: 2px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); display: block; margin: 0 auto; }
+        .supervisor-photo { aspect-ratio: 4 / 3; object-fit: cover; object-position: top center; }
 
-        /* FAQ & その他 */
-        .faq-item { background: #fff; margin-bottom: 20px; padding: 40px; border: 1px solid #eee; text-align: left; }
-        .faq-q { font-weight: 700; color: var(--text-main); margin-bottom: 15px; display: block; }
-        .faq-q::before { content: "Q. "; color: var(--text-gold); }
+        .dev-info { flex: 1.2; text-align: left; padding: 0; }
+        .dev-header { font-size: 1.7rem; margin: 0 0 30px 0; color: var(--text-main); line-height: 1.4; font-weight: 700; }
+        .dev-sub-header { font-size: 0.9rem; color: var(--text-gold); font-weight: 600; margin-bottom: 25px; display: block; letter-spacing: 0.05em; }
+        .dev-body-text { font-size: 1.05rem; color: var(--text-sub); line-height: 2.2; margin-bottom: 60px; }
+        .supervisor-msg { font-size: 1.05rem; color: var(--text-main); padding-left: 25px; border-left: 2px solid var(--text-gold); line-height: 2.2; margin: 0; }
+
+        /* 6. PRODUCT SELECTION */
+        .section-selection { background-color: #fff; text-align: center; }
+        .selection-box { background: var(--bg-wash); padding: 80px 5%; border: 1px solid #eee; max-width: 1000px; margin: 0 auto; border-radius: 2px; }
+        .selection-imgs { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 50px; }
+        .selection-imgs img { width: 46%; max-width: 400px; border-radius: 2px; }
+        
+        .spec-table { width: 100%; max-width: 650px; margin: 40px auto 50px; border-collapse: collapse; text-align: left; font-size: 0.9rem; line-height: 1.8; }
+        .spec-table th, .spec-table td { padding: 12px 15px; border-bottom: 1px solid #ddd; }
+        .spec-table th { width: 30%; color: var(--text-sub); font-weight: 600; background: rgba(0,0,0,0.01); }
+
+        .price { font-size: 3rem; font-weight: 700; margin-bottom: 40px; color: var(--text-main); }
+        .btn-purchase { display: inline-block; background: var(--text-main); color: #fff; padding: 22px 100px; text-decoration: none; font-weight: 700; border-radius: 2px; font-size: 1.2rem; transition: 0.3s; }
+
+        /* 7. FAQ: 背景グレーの独立カード形式 7項目 */
+        .section-faq { background-color: #f4f4f2; }
+        .faq-container { max-width: 1100px; margin: 0 auto; }
+        .faq-item { background: #fff; margin-bottom: 20px; padding: 45px 50px; border-radius: 2px; text-align: left; box-shadow: 0 2px 15px rgba(0,0,0,0.02); }
+        .faq-q { font-weight: 600; color: var(--text-main); margin-bottom: 15px; display: block; font-size: 1.15rem; }
+        .faq-q::before { content: "Q. "; color: var(--text-gold); font-weight: 700; }
+        .faq-a { font-size: 1rem; color: var(--text-sub); margin: 0; line-height: 2.1; }
+
+        /* 8. OVERVIEW */
+        .section-overview { background-color: #fff; }
         .company-table { width: 100%; max-width: 850px; margin: 0 auto; border-collapse: collapse; text-align: left; }
-        .company-table th, .company-table td { padding: 20px; border-bottom: 1px solid #eee; }
-        .company-table th { width: 30%; color: var(--text-gold); font-weight: 600; }
+        .company-table th, .company-table td { padding: 25px; border-bottom: 1px solid #eee; }
+        .company-table th { width: 30%; color: var(--text-gold); font-weight: 600; font-size: 1rem; }
 
-        /* 固定バー */
-        .fixed-cta { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.98); padding: 18px 0; box-shadow: 0 -3px 20px rgba(0,0,0,0.03); z-index: 1000; text-align: center; backdrop-filter: blur(10px); }
-        .fixed-btn { background: var(--brand-gold); color: #fff; padding: 15px 100px; text-decoration: none; font-weight: 700; border-radius: 50px; display: inline-block; transition: 0.3s; font-size: 1.1rem; }
+        /* 固定バー */
+        .fixed-cta { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.9); padding: 16px 0; z-index: 1000; text-align: center; backdrop-filter: blur(10px); border-top: 1px solid rgba(0,0,0,0.05); }
+        .fixed-btn { background: transparent; color: var(--text-main); padding: 12px 90px; text-decoration: none; font-weight: 700; border-radius: 50px; display: inline-block; transition: 0.3s; font-size: 0.95rem; border: 1px solid var(--text-main); letter-spacing: 0.1em; }
 
         @media (max-width: 900px) {
-            .hero-alliance p { font-size: 0.75rem; line-height: 1.8; }
             .story-flex, .dev-flex { flex-direction: column; gap: 40px; }
             .story-right { border-left: none; border-top: 1px solid var(--text-gold); padding: 40px 0 0 0; }
-            .dev-title-wrap { white-space: normal; } /* スマホでは自然な改行を許可 */
+            .dev-photos img { max-width: 100%; }
             .selection-imgs img { width: 100%; }
-            .fixed-btn { width: 85%; padding: 15px 0; }
+            .fixed-btn { width: 85%; padding: 12px 0; }
+            .hero { height: 60vh; }
         }
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <div class="hero-bg"><img src="Main_A4.jpg" alt="八雲の物語背景"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-collab">
-                <p>NHK 連続テレビ小説「ばけばけ」コラボレーション商品</p>
-            </div>
-            <div class="hero-copy reveal">
-                <p class="hero-tagline">MATSUE STORY & TECHNOLOGY</p>
-                <h1>「座る」という日常に、<br>身体を守るクッションを。</h1>
-            </div>
-            <div class="hero-alliance reveal">
-                <p>創業145年 老舗寝具メーカー 浅尾繊維工業 × 作業・理学療法士 × 島根の健康経営支援企業 フジイコーポレーション</p>
-            </div>
-        </div>
+    <div class="hero reveal">
+        <img src="プレゼンテーション1.jpeg" alt="八雲！座ってごしない メインビジュアル" class="hero-img">
     </div>
 
     <section class="section-story">
@@ -139,13 +116,13 @@
             <span class="section-tag">THE GENESIS</span>
             <div class="story-flex">
                 <div class="story-left">
-                    <img src="Main_A4.jpg" alt="小泉八雲とセツ">
+                    <img src="Main_A4.jpg" alt="公式ロゴマーク">
                 </div>
                 <div class="story-right">
                     <p class="story-quote">「八雲さん、あんまり根を詰めんと、<br>ちーとここへ”座ってごしない”」</p>
                     <div class="story-body">
-                        <p>強度の近視により、机に覆いかぶさるように執筆に没頭した小泉八雲（ラフカディオ・ハーン）。そんな夫の身体を案じ、休息を促した妻セツの献身的な愛を、現代の「いたわり」を具現化したクッションとして形にしました。</p>
-                        <p>「座ってくださいな」を意味する出雲弁の響き。それは、二人を包んだ穏やかで優しい松江の空気そのものです。文豪の言葉を支えたのは、傍らにいた一人の女性の「いたわり」でした。</p>
+                        <p>強度の近視により、机に覆いかぶさるように執筆に没頭した小泉八雲。そんな夫の身体を案じ、休息を促した妻セツの献身的な愛を、現代の「いたわり」を具現化したクッションとして形にしました。</p>
+                        <p>「座ってくださいな」を意味する出雲弁の響き。文豪の言葉を支えたのは、傍らにいた一人の女性の「いたわり」でした。</p>
                     </div>
                 </div>
             </div>
@@ -155,68 +132,77 @@
     <section class="section-targeting">
         <div class="reveal">
             <span class="section-tag">IS THIS YOU?</span>
-            <h2 class="section-title">デスクワークや長時間の運転によって、<br>身体に負担を与えていませんか？</h2>
+            <h2 class="section-title">デスクワークや長時間の運転による、<br>蓄積する身体の負担。</h2>
             <div class="targeting-grid">
                 <div class="target-card">
                     <h4>PC・スマホへの没頭</h4>
-                    <p>集中するほど、画面に吸い込まれるような前傾姿勢になっていませんか？その姿勢は、あなたが気づかぬうちに腰や首へ「数年分の負担」を蓄積させています。</p>
+                    <p>集中するほど、画面に吸い込まれるような前傾姿勢。それは腰や首へ「数年分の負担」を蓄積させています。</p>
                 </div>
                 <div class="target-card">
                     <h4>長距離の運転・移動</h4>
-                    <p>座り心地の悪さからくる身体の違和感が、運転や移動への集中を乱します。静かに集中力を削がれた結果、移動の質と安全性が損なわれていくのです。</p>
+                    <p>座り心地の違和感が、集中力を削ぎます。静かにパフォーマンスを落とし、移動の質を損なう原因となります。</p>
                 </div>
                 <div class="target-card">
                     <h4>翌朝まで残る、座り疲労</h4>
-                    <p>一日を終え、立ち上がった瞬間の腰の重みや、身体の節々の「固まり」を感じませんか？その疲労は翌日のコンディションを奪います。明日を軽やかにスタートするために、座り方への「いたわり」が必要です。</p>
+                    <p>一日を終え、立ち上がった瞬間の重み。その疲労を翌日に持ち越さないために、座り方への「いたわり」が必要です。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="section-intro">
-        <div class="reveal">
-            <h2 class="intro-title">無意識のうちに、身体に無理を強いていませんか？</h2>
-            <p class="intro-text">自分でも気づかないほど根を詰めすぎるあなたの身体を、松江の「いたわり」で包いたい。<br>それは、文豪をも支えた慈しみの心です。</p>
-        </div>
-    </div>
-
     <section>
         <span class="section-tag">PRODUCT DETAILS</span>
         <h2 class="section-title">理想の姿勢を、科学する。</h2>
-        
         <div class="tech-row reveal">
-            <div class="tech-img-container"><img src="logic.jpg" alt="重心移動" class="tech-img"></div>
+            <img src="logic.jpg" alt="重心移動のロジック" class="tech-img">
             <div class="tech-text">
                 <span class="tech-tag">01. LOGIC</span>
-                <h3>自然な重心移動を助ける</h3>
-                <p>人は座っている間も無意識に重心を動かし負荷を分散します。沈み込みすぎない高反発設計が理想の姿勢作りを多角的にサポートします。作業・理学療法士が検証を重ねたこの「硬さ」こそが、鍵です。</p>
+                <p>沈み込みすぎない高反発設計が理想の姿勢作りをサポート。認定理学療法士が検証を重ねたこの「硬さ」こそが、身体を守る鍵です。</p>
             </div>
         </div>
-
         <div class="tech-row reveal">
-            <div class="tech-img-container"><img src="mesh.jpg" alt="素材" class="tech-img"></div>
+            <img src="mesh.jpg" alt="ブレスエアー素材" class="tech-img">
             <div class="tech-text">
                 <span class="tech-tag">02. MATERIAL</span>
-                <h3>新幹線採用素材「ブレスエアー®」</h3>
-                <p>中材には新幹線座席にも採用される信頼の素材を使用。圧倒的な体圧分散性と驚異的な通気性を両立。夏でも冬でも快適な全天候型シートです。</p>
+                <p>中材には圧倒的な体圧分散性と通気性を誇る信頼の素材を使用。季節を問わず、快適な座り心地を約束します。</p>
             </div>
         </div>
-
         <div class="tech-row reveal">
-            <div class="tech-img-container"><img src="design.jpg" alt="ズレ防止" class="tech-img"></div>
+            <img src="design.jpg" alt="滑り止め加工" class="tech-img">
             <div class="tech-text">
                 <span class="tech-tag">03. STABILITY</span>
-                <h3>ズレを防ぐことが、集中を守る</h3>
-                <p>裏面には強力な滑り止め加工を施しました。椅子の上でお尻が滑ることは、姿勢を崩し、集中力を削ぐ大きな原因となります。定位置をキープすることで正しい骨盤の位置を保ちます。</p>
+                <p>裏面には強力な滑り止め加工。椅子の上でのズレを防ぎ、常に正しい骨盤の位置をキープすることで集中力を守ります。</p>
             </div>
         </div>
-
         <div class="tech-row reveal">
-            <div class="tech-img-container"><img src="clean.jpg" alt="丸洗い" class="tech-img"></div>
+            <img src="clean.jpg" alt="丸洗い可能" class="tech-img">
             <div class="tech-text">
                 <span class="tech-tag">04. HYGIENE</span>
-                <h3>毎日使うからこそ、丸洗いの清潔を</h3>
-                <p>シャワーで丸洗いが可能です。陰干しするだけで速乾し、汚れやニオイを気にせず、常にリフレッシュされた状態で身体を預けられます。</p>
+                <p>中材まで丸洗いが可能です。シャワーで流し、陰干しするだけで速乾。常にリフレッシュされた状態で身体を預けられます。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-developer">
+        <div class="reveal">
+            <span class="section-tag">DEVELOPMENT STORY</span>
+            <div class="dev-flex">
+                <div class="dev-photos">
+                    <img src="hero.jpg" alt="開発風景">
+                    <img src="photo 4-243.jpg" alt="監修風景" class="supervisor-photo">
+                </div>
+                <div class="dev-info">
+                    <h3 class="dev-header">専門家と老舗メーカーが導いた<br>理想のクッション</h3>
+                    <div class="dev-body-text">
+                        <p>老舗寝具メーカー「浅尾繊維工業」と、㈱フジイコーポレーションが幾度もの試作と試験を重ねて作り上げた、理想のチェアクッション。</p>
+                        <p>身体の自由を尊重し、動作を妨げないデザインを追求。認定理学療法士の知見を詰め込んだ、働く人のためのコンディショニング・シートです。</p>
+                    </div>
+                    <h3 class="dev-header">製品監修 小村 康平</h3>
+                    <span class="dev-sub-header">（認定理学療法士 / アスレティックトレーナー）</span>
+                    <p class="supervisor-msg">
+                        「動作の専門家の視点から、長時間のデスクワークにおける骨盤の安定性と体圧分散を徹底的に追求しました。このクッションは、働く身体を整えるための『日常のパートナー』です。」
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -225,70 +211,62 @@
         <div class="selection-box reveal">
             <span class="section-tag">PRODUCT SELECTION</span>
             <h2 class="product-name">八雲！座ってごしない</h2>
-            <span class="product-sub">（座面クッション）</span>
             <div class="selection-imgs">
                 <img src="colors.jpg" alt="カラー展開">
                 <img src="product.jpg" alt="製品ディテール">
             </div>
-            <p class="price">¥11,000 <small style="font-size: 1.2rem; font-weight: normal;">(TAX IN)</small></p>
-            <a href="https://forms.gle/gsFDFAZ9dR7z2eDw5" class="btn-large">購入ページへ進む</a>
-            <p style="color: #888; font-size: 0.95rem; margin-top: 25px;">※カラーは購入フォームよりお選びいただけます。</p>
+            <table class="spec-table">
+                <tr><th>重さ</th><td>約320g</td></tr>
+                <tr><th>サイズ</th><td>約33×40×4（cm）</td></tr>
+                <tr><th>生産国</th><td>日本</td></tr>
+                <tr><th>表生地</th><td>ポリエステル100％（ソフトハニカム）</td></tr>
+                <tr><th>裏生地</th><td>ポリエステル100％（すべり止め加工）</td></tr>
+                <tr><th>中材</th><td>合成繊維（ポリエーテルエステル系繊維）100％</td></tr>
+            </table>
+            <p class="price">¥11,000 <small style="font-size: 1.1rem; font-weight: normal; color: #888;">(TAX IN)</small></p>
+            <a href="https://forms.gle/gsFDFAZ9dR7z2eDw5" class="btn-purchase">購入ページへ進む</a>
         </div>
     </section>
 
-    <section class="section-developer">
+    <section class="section-faq">
         <div class="reveal">
-            <span class="section-tag">DEVELOPMENT STORY</span>
-            <div class="dev-flex">
-                <div class="dev-photo">
-                    <img src="hero.jpg" alt="開発風景">
-                </div>
-                <div class="dev-info">
-                    <h3 class="dev-title">専門家と老舗メーカーが導いた<span class="dev-title-wrap">理想のクッション</span></h3>
-                    <div class="dev-text">
-                        <p>安心安全な原料と心地良い寝姿勢にこだわった寝具を製造販売している老舗寝具メーカー「浅尾繊維工業」と、㈱フジイコーポレーションの理学療法士・作業療法士が幾度もの試作と試験を重ねて作り上げた、理想のチェアクッション。</p>
-                        <p>新幹線のシートにも採用される高機能素材を使用し、お尻にかかる体圧を優しく、かつ的確に分散。座り姿勢そのものにアプローチし、長時間の利用でも動作を妨げない、身体の自由を尊重するデザインを追求しました。</p>
-                        <p>健康経営支援事業（みんなの右腕）を手がける島根の㈱フジイコーポレーションと創業145年の老舗寝具メーカー浅尾繊維工業株式会社が小泉八雲の物語（NHKばけばけ）と掛け合わせ、リブランディングし誕生しました。</p>
-                    </div>
-                </div>
+            <span class="section-tag">FAQ</span>
+            <h2 class="section-title">よくあるご質問</h2>
+            <div class="faq-container">
+                <div class="faq-item"><span class="faq-q">既存の椅子に置くだけで良いですか？</span><p class="faq-a">はい。厚さ約4cmの薄型設計ですので、椅子の高さを変えずに座り心地をアップグレードできます。</p></div>
+                <div class="faq-item"><span class="faq-q">お手入れの方法を教えてください。</span><p class="faq-a">丸洗いが可能です。中材はシャワーで流せ、非常に速乾性に優れています。</p></div>
+                <div class="faq-item"><span class="faq-q">一般的なクッションとの違いは？</span><p class="faq-a">沈み込みすぎない「高反発」素材であることです。自然な重心移動を妨げず、姿勢が崩れにくいのが特徴です。</p></div>
+                <div class="faq-item"><span class="faq-q">ギフト用としての発送は可能ですか？</span><p class="faq-a">はい。贈り物に大変喜ばれています。詳細は購入フォームよりご確認ください。</p></div>
+                <div class="faq-item"><span class="faq-q">耐久性はどのくらいですか？</span><p class="faq-a">新幹線座席にも採用される素材を使用。へたりにくく、長くご愛用いただけます。</p></div>
+                <div class="faq-item"><span class="faq-q">どこで体験できますか？</span><p class="faq-a">島根県松江市のコワーキングスペース「enun（エヌン）」にて実物をご体験いただけます。</p></div>
+                <div class="faq-item"><span class="faq-q">「座ってごしない」の意味は？</span><p class="faq-a">松江の方言で「座ってくださいな」という意味です。小泉八雲の妻セツが夫を労った言葉に由来します。</p></div>
             </div>
         </div>
     </section>
 
-    <section style="background-color: var(--bg-silk);">
-        <span class="section-tag">FAQ</span>
-        <h2 class="section-title">よくあるご質問</h2>
-        <div class="faq-container reveal">
-            <div class="faq-item"><span class="faq-q">既存の椅子に置くだけで良いですか？</span><p class="faq-a">はい。厚さ約4cmの薄型設計ですので、椅子の高さを変えずに座り心地をアップグレードできます。</p></div>
-            <div class="faq-item"><span class="faq-q">お手入れの方法を教えてください。</span><p class="faq-a">クッションは丸洗いが可能です。非常に速乾性の高い素材です。</p></div>
-            <div class="faq-item"><span class="faq-q">一般的なクッションとの違いは？</span><p class="faq-a">「高反発」素材であることです。沈み込みすぎないため、自然な重心移動を妨げず、姿勢が崩れにくいのが特徴です。</p></div>
-            <div class="faq-item"><span class="faq-q">ギフト用としての発送は可能ですか？</span><p class="faq-a">はい。贈り物として、敬老の日や誕生日などに大変喜ばれています。</p></div>
-            <div class="faq-item"><span class="faq-q">耐久性はどのくらいですか？</span><p class="faq-a">新幹線座席に採用される耐久性に優れた素材を使用。一般的なウレタンよりへたりにくく長くご愛用いただけます。</p></div>
-            <div class="faq-item"><span class="faq-q">どこで体験できますか？</span><p class="faq-a">島根県松江市のコワーキングスペース「enun」にて実物をご体験いただけます。</p></div>
-            <div class="faq-item"><span class="faq-q">「座ってごしない」の意味は？</span><p class="faq-a">島根県松江市の方言（出雲弁）で「座ってくださいな」という意味です。小泉八雲の妻セツが夫八雲を労った言葉に由来します。</p></div>
-        </div>
-    </section>
-
-    <section>
-        <span class="section-tag">OVERVIEW</span>
-        <h2 class="section-title">会社概要</h2>
+    <section class="section-overview">
         <div class="reveal">
+            <span class="section-tag">OVERVIEW</span>
+            <h2 class="section-title">会社概要</h2>
             <table class="company-table">
                 <tr><th>会社名</th><td>株式会社フジイコーポレーション</td></tr>
                 <tr><th>代表者</th><td>代表取締役 藤井 寛幸</td></tr>
                 <tr><th>所在地</th><td>〒690-0845 島根県松江市西茶町40-1 enun2F-1</td></tr>
-                <tr><th>事業内容</th><td>健康経営支援、ビジネスケアラー支援、AI活用による人材定着支援等</td></tr>
+                <tr><th>事業内容</th><td>健康経営支援、AI活用による人材定着支援等</td></tr>
             </table>
         </div>
     </section>
 
     <div class="fixed-cta">
-        <a href="https://forms.gle/gsFDFAZ9dR7z2eDw5" class="fixed-btn">今すぐ購入する（¥11,000）</a>
+        <a href="https://forms.gle/gsFDFAZ9dR7z2eDw5" class="fixed-btn">ご購入はこちら（¥11,000）</a>
     </div>
 
-    <footer style="background: #fdfdfb; color: #888; padding: 60px 20px; text-align: center; font-size: 0.9rem; border-top: 1px solid #eee;">
+    <footer style="background: #fdfdfb; color: #888; padding: 60px 20px; text-align: center; font-size: 0.85rem; border-top: 1px solid #eee;">
         <p>2026 八雲！座ってごしない | Produced by 株式会社フジイコーポレーション.</p>
-        <p style="margin-top: 15px; font-size: 0.8rem; letter-spacing: 0.05em;">※本製品は一般医療機器ではありません。家庭用の姿勢サポート用クッションです。</p>
+        <p style="margin-top: 15px; font-size: 0.75rem; letter-spacing: 0.05em; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+            ※本製品は一般医療機器ではありません。家庭用の姿勢サポート用クッションです。<br>
+            ※本製品は「小泉八雲・セツのドラマをイカしてバケる松江推進協議会」公式ロゴマーク使用承認商品です。
+        </p>
     </footer>
 
     <script>
