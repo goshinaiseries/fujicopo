@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>-ごしないシリーズ- 八雲！座ってごしない</title>
+    <title>ヘルンさん 座ってごしない | セツのいたわりクッション</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,500&family=Noto+Serif+JP:wght@200;300;400;600;700&display=swap');
         
@@ -32,15 +32,15 @@
         section { width: 100%; padding: 100px 0; border-bottom: 1px solid #f0f0f0; }
         .container { width: 90%; max-width: 1100px; margin: 0 auto; }
 
-        /* 1. HERO (PC版の切れを防止) */
+        /* 1. HERO */
         .hero { height: 100vh; width: 100vw; position: relative; overflow: hidden; background-color: #ffffff; display: flex; align-items: center; justify-content: center; }
-        .hero-pc { width: 100%; height: 100%; object-fit: contain; display: block; } /* 切れないようにcontainに変更 */
+        .hero-pc { width: 100%; height: 100%; object-fit: contain; display: block; }
         .hero-sp { display: none; }
 
         .section-tag { color: var(--brand-gold); font-family: 'Cormorant Garamond', serif; letter-spacing: 0.3em; display: block; margin-bottom: 20px; font-size: 0.9rem; text-align: center; }
         .section-title { font-size: clamp(1.4rem, 4vw, 2.2rem); text-align: center; color: var(--text-main); font-weight: 600; margin-bottom: 80px; }
 
-        /* 2. THE GENESIS (PC用左寄せ補正) */
+        /* 2. THE GENESIS */
         .section-story { background-color: var(--bg-wash); }
         .story-flex { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
         .story-left { 
@@ -64,14 +64,14 @@
         .target-card { background: #fff; padding: 40px; border-radius: 2px; text-align: left; height: 100%; }
         .target-card h4 { color: var(--brand-gold); font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid var(--brand-gold); display: inline-block; }
 
-        /* 4. PRODUCT DETAILS (全4項目掲載) */
+        /* 4. PRODUCT DETAILS */
         .tech-row { display: flex; flex-direction: column; align-items: center; margin-bottom: 100px; text-align: center; }
         .tech-img { width: 100%; max-width: 800px; border-radius: 2px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 30px; }
         .tech-text { text-align: left; width: 100%; max-width: 800px; }
         .tech-text h3 { font-size: 1.4rem; margin-bottom: 15px; border-left: 3px solid var(--brand-gold); padding-left: 15px; }
         .tech-text p { font-size: 1.1rem; line-height: 2.2; color: var(--text-sub); }
 
-        /* 5. DEVELOPMENT STORY (監修者情報・足カット設定) */
+        /* 5. DEVELOPMENT STORY */
         .section-developer { background-color: var(--bg-wash); }
         .dev-container { display: flex; gap: 50px; align-items: flex-start; }
         .dev-photos { flex: 0.8; display: flex; flex-direction: column; gap: 30px; }
@@ -91,21 +91,30 @@
         /* 6. PRODUCT SELECTION */
         .selection-box { background: var(--bg-wash); padding: 60px 5%; text-align: center; }
         .selection-imgs { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
-        .selection-imgs img { width: 45%; min-width: 280px; border-radius: 2px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        /* 画像を中央に配置するための修正 */
+        .selection-imgs img { 
+            width: 100%; 
+            max-width: 800px; 
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 2px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+        }
         .spec-table { width: 100%; max-width: 700px; margin: 40px auto; border-collapse: collapse; text-align: left; }
         .spec-table th, .spec-table td { padding: 15px; border-bottom: 1px solid #ddd; font-size: 0.95rem; }
         .spec-table th { width: 35%; background: rgba(0,0,0,0.02); color: var(--text-sub); }
         .price { font-size: 2.8rem; font-weight: 700; margin: 30px 0; }
         .btn-purchase { display: inline-block; background: var(--text-main); color: #fff; padding: 20px 80px; text-decoration: none; font-weight: 700; border-radius: 2px; font-size: 1.2rem; }
 
-        /* 7. FAQ (7項目) */
+        /* 7. FAQ */
         .section-faq { background-color: #f4f4f2; }
         .faq-item { background: #fff; margin-bottom: 15px; padding: 35px; border-radius: 2px; box-shadow: 0 2px 10px rgba(0,0,0,0.02); text-align: left; }
         .faq-q { font-weight: 700; margin-bottom: 12px; display: block; font-size: 1.1rem; }
         .faq-q::before { content: "Q. "; color: var(--brand-gold); }
         .faq-a { color: var(--text-sub); font-size: 1rem; margin: 0; line-height: 1.9; }
 
-        /* 8. OVERVIEW (詳細完備) */
+        /* 8. OVERVIEW */
         .section-overview { background-color: #fff; }
         .company-table { width: 100%; max-width: 850px; margin: 0 auto; border-collapse: collapse; text-align: left; }
         .company-table th, .company-table td { padding: 20px; border-bottom: 1px solid #eee; }
@@ -115,7 +124,7 @@
         .fixed-cta { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.95); padding: 15px 0; z-index: 1000; text-align: center; border-top: 1px solid #eee; backdrop-filter: blur(5px); }
         .fixed-btn { border: 1.5px solid var(--text-main); padding: 12px 60px; text-decoration: none; color: var(--text-main); font-weight: 700; border-radius: 50px; }
 
-        /* MOBILE OPTIMIZATION (スマホ版ロゴ中央揃え徹底修正) */
+        /* MOBILE OPTIMIZATION */
         @media (max-width: 768px) {
             .hero-pc { display: none; }
             .hero-sp { display: block; width: 100%; height: 100%; object-fit: contain; }
@@ -147,7 +156,7 @@
 
     <div class="hero">
         <img src="プレゼンテーション1.jpeg" alt="PC版" class="hero-pc">
-        <img src="sumaho.jpeg" alt="スマホ版" class="hero-sp">
+        <img src="itawari.jpg" alt="スマホ版" class="hero-sp">
     </div>
 
     <section class="section-story">
@@ -156,7 +165,7 @@
             <div class="story-flex">
                 <div class="story-left"><img src="Main_A4.jpg" alt="ロゴマーク"></div>
                 <div class="story-right">
-                    <p class="story-quote">「八雲さん、あんまり根を詰めんと、<br>ちーとここへ”座ってごしない”」</p>
+                    <p class="story-quote">「ヘルンさん、あんまり根を詰めんと、<br>ちーとここへ”座ってごしない”」</p>
                     <div class="story-body">
                         <p>強度の近視により、机に覆いかぶさるように執筆に没頭した小泉八雲（ラフカディオ・ハーン）。そんな夫の身体を案じ、休息を促した妻セツの献身的な愛を、現代の「いたわり」を具現化したクッションとして形にしました。</p>
                         <p>「座ってくださいな」を意味する出雲弁の響き。それは、二人を包んだ穏やかで優しい松江の空気そのものです。文豪の言葉を支えたのは、傍らにいた一人の女性の「いたわり」でした。</p>
@@ -192,7 +201,7 @@
     <section>
         <div class="container reveal">
             <span class="section-tag">PRODUCT DETAILS</span>
-            <h2 class="section-title">理想の姿勢を、科学する。</h2>
+            <h2 class="section-title">理想の姿勢を、科学する.</h2>
             <div class="tech-row">
                 <img src="logic.jpg" alt="重心移動" class="tech-img">
                 <div class="tech-text">
@@ -227,7 +236,6 @@
     <section class="section-developer">
         <div class="container reveal">
             <span class="section-tag">DEVELOPMENT STORY</span>
-            
             <div class="pc-dev-layout dev-container">
                 <div class="dev-photos">
                     <img src="hero.jpg" alt="開発風景">
@@ -238,8 +246,8 @@
                         <h3 class="dev-header">専門家と老舗メーカーが導いた理想のクッション</h3>
                         <div class="dev-body-text">
                             <p>安心安全な原料と心地良い寝姿勢にこだわった寝具を製造販売している老舗寝具メーカー「浅尾繊維工業」と、㈱フジイコーポレーションの理学療法士・作業療法士が幾度もの試作と試験を重ねて作り上げた、理想のチェアクッション。</p>
-                            <p>新幹線のシートにも採用される高機能素材を使用し、お尻にかかる体圧を優しく、かつ的な分散。座り姿勢そのものにアプローチし、長時間の利用でも動作を妨げない、身体の自由を尊重するデザインを追求しました。</p>
-                            <p>健康経営支援事業（みんなの右腕）を手がける島根の㈱フジイコーポレーションと創業145年の老舗寝具メーカー浅尾繊維工業株式会社が小泉八雲の物語と掛け合わせ、リブランディングし誕生しました。</p>
+                            <p>新幹線のシートにも採用される高機能素材を使用し、お尻にかかる体圧を優しく、かつ的確に分散。座り姿勢そのものにアプローチし、長時間の利用でも動作を妨げない、身体の自由を尊重するデザインを追求しました。</p>
+                            <p>健康経営支援事業（みんなの右腕）を手がける島根の㈱フジイコーポレーションと創業145年の老舗寝具メーカー浅尾繊維工業株式会社が小泉八雲の物語と掛け合わせ、この一品を完成させました。</p>
                         </div>
                     </div>
                     <div class="dev-block">
@@ -277,12 +285,13 @@
         <div class="container reveal">
             <span class="section-tag">PRODUCT SELECTION</span>
             <div class="selection-box">
-                <p style="color: var(--brand-gold); font-weight: 700; margin-bottom: 5px;">-ごしないシリーズ-</p>
-                <h2 style="margin-top: 0;">八雲！座ってごしない</h2>
+                <p style="color: var(--brand-gold); font-weight: 700; margin-bottom: 5px;">セツのいたわりクッション</p>
+                <h2 style="margin-top: 0;">ヘルンさん<br>座ってごしない</h2>
+                
                 <div class="selection-imgs">
-                    <img src="colors.jpg" alt="カラー展開">
-                    <img src="product.jpg" alt="製品ディテール">
+                    <img src="shohin.jpg" alt="ヘルンさん 座ってごしない 商品写真">
                 </div>
+                
                 <table class="spec-table">
                     <tr><th>重さ</th><td>約320g</td></tr>
                     <tr><th>サイズ</th><td>約33×40×4（cm）</td></tr>
@@ -328,7 +337,7 @@
     </section>
 
     <div class="fixed-cta">
-        <a href="https://forms.gle/gsFDFAZ9dR7z2eDw5" class="fixed-btn">ご購入はこちら（¥11,000）</a>
+        <a href="https://forms.gle/gsFDFAZ9dR7z2eDw5" class="fixed-btn">ご購入はこちら</a>
     </div>
 
     <footer style="padding: 60px 0; text-align: center; background: #fdfdfb; font-size: 0.8rem; color: #888;">
