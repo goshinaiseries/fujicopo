@@ -32,9 +32,19 @@
         section { width: 100%; padding: 100px 0; border-bottom: 1px solid #f0f0f0; }
         .container { width: 90%; max-width: 1100px; margin: 0 auto; }
 
-        /* 1. HERO */
-        .hero { height: 100vh; width: 100vw; position: relative; overflow: hidden; background-color: #ffffff; display: flex; align-items: center; justify-content: center; }
-        .hero-pc { width: 100%; height: 100%; object-fit: contain; display: block; }
+        /* --- 修正箇所: HEROセクション --- */
+        .hero { 
+            width: 100%; 
+            height: auto; /* 画面固定を解除 */
+            position: relative; 
+            background-color: #ffffff;
+            line-height: 0; /* 下部の微細な隙間対策 */
+        }
+        .hero-pc, .hero-sp { 
+            width: 100%; 
+            height: auto; 
+            display: block; 
+        }
         .hero-sp { display: none; }
 
         .section-tag { color: var(--brand-gold); font-family: 'Cormorant Garamond', serif; letter-spacing: 0.3em; display: block; margin-bottom: 20px; font-size: 0.9rem; text-align: center; }
@@ -91,7 +101,6 @@
         /* 6. PRODUCT SELECTION */
         .selection-box { background: var(--bg-wash); padding: 60px 5%; text-align: center; }
         .selection-imgs { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
-        /* 画像を中央に配置するための修正 */
         .selection-imgs img { 
             width: 100%; 
             max-width: 800px; 
@@ -127,7 +136,7 @@
         /* MOBILE OPTIMIZATION */
         @media (max-width: 768px) {
             .hero-pc { display: none; }
-            .hero-sp { display: block; width: 100%; height: 100%; object-fit: contain; }
+            .hero-sp { display: block; }
             
             .story-flex { flex-direction: column; align-items: center; text-align: center; width: 100%; }
             .story-left { 
@@ -201,7 +210,7 @@
     <section>
         <div class="container reveal">
             <span class="section-tag">PRODUCT DETAILS</span>
-            <h2 class="section-title">理想の姿勢を、科学する.</h2>
+            <h2 class="section-title">理想の姿勢を、科学する。</h2>
             <div class="tech-row">
                 <img src="logic.jpg" alt="重心移動" class="tech-img">
                 <div class="tech-text">
@@ -287,11 +296,9 @@
             <div class="selection-box">
                 <p style="color: var(--brand-gold); font-weight: 700; margin-bottom: 5px;">セツのいたわりクッション</p>
                 <h2 style="margin-top: 0;">ヘルンさん<br>座ってごしない</h2>
-                
                 <div class="selection-imgs">
                     <img src="shohin.jpg" alt="ヘルンさん 座ってごしない 商品写真">
                 </div>
-                
                 <table class="spec-table">
                     <tr><th>重さ</th><td>約320g</td></tr>
                     <tr><th>サイズ</th><td>約33×40×4（cm）</td></tr>
