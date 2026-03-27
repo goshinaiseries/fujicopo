@@ -14,7 +14,6 @@
             --bg-white: #ffffff;
             --text-main: #222222; 
             --text-sub: #444444;
-            --sale-red: #b22222; /* セール用のアクセントカラー */
         }
 
         body { 
@@ -33,7 +32,7 @@
         section { width: 100%; padding: 100px 0; border-bottom: 1px solid #f0f0f0; }
         .container { width: 90%; max-width: 1100px; margin: 0 auto; }
 
-        /* --- HEROセクション --- */
+        /* --- HEROセクション (スマホの最上部余白を排除) --- */
         .hero { 
             width: 100%; 
             height: auto; 
@@ -99,7 +98,7 @@
         .sup-sub { font-size: 0.9rem; color: var(--text-sub); margin-bottom: 5px; font-weight: 600; display: block; }
         .supervisor-msg { font-size: 1rem; padding-left: 20px; border-left: 3px solid var(--brand-gold); line-height: 2.1; color: var(--text-main); margin: 15px 0 0 0; }
 
-        /* 6. PRODUCT SELECTION */
+        /* 6. PRODUCT SELECTION (商品画像の中央配置) */
         .selection-box { background: var(--bg-wash); padding: 60px 5%; text-align: center; }
         .selection-imgs { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
         .selection-imgs img { 
@@ -114,14 +113,7 @@
         .spec-table { width: 100%; max-width: 700px; margin: 40px auto; border-collapse: collapse; text-align: left; }
         .spec-table th, .spec-table td { padding: 15px; border-bottom: 1px solid #ddd; font-size: 0.95rem; }
         .spec-table th { width: 35%; background: rgba(0,0,0,0.02); color: var(--text-sub); }
-        
-        /* 価格強調用のスタイル */
-        .price-container { margin: 30px 0; }
-        .sale-period { color: var(--sale-red); font-weight: 700; font-size: 1rem; display: block; margin-bottom: 10px; }
-        .old-price { font-size: 1.4rem; color: #888; text-decoration: line-through; margin-right: 15px; }
-        .new-price { font-size: 3.2rem; font-weight: 700; color: var(--text-main); }
-        .tax-in { font-size: 1rem; color: #888; }
-
+        .price { font-size: 2.8rem; font-weight: 700; margin: 30px 0; }
         .btn-purchase { display: inline-block; background: var(--text-main); color: #fff; padding: 20px 80px; text-decoration: none; font-weight: 700; border-radius: 2px; font-size: 1.2rem; }
 
         /* 7. FAQ */
@@ -165,8 +157,6 @@
             .mobile-dev-flow img { width: 100%; margin-bottom: 20px; border-radius: 2px; }
             .mobile-dev-flow .dev-block { margin-bottom: 40px; }
             .selection-imgs img { width: 100%; }
-            
-            .new-price { font-size: 2.6rem; }
         }
         @media (min-width: 769px) { .mobile-dev-flow { display: none; } .target-br-sp { display: none; } }
     </style>
@@ -187,7 +177,7 @@
                     <p class="story-quote">「ヘルンさん、あんまり根を詰めんと、<br>ちーとここへ”座ってごしない”」</p>
                     <div class="story-body">
                         <p>強度の近視により、机に覆いかぶさるように執筆に没頭した小泉八雲（ラフカディオ・ハーン）。そんな夫の身体を案じ、休息を促した妻セツの献身的な愛を、現代の「いたわり」を具現化したクッションとして形にしました。</p>
-                        <p>「座ってくださいな」を意味する出雲弁の響き。それは、二人を包んだ穏やかで優しい松江の空気そのものです。文豪の言葉を支えたのは、傍らにいた一人の女性の「いたわり」でした。</p>
+                        <p>「座ってくださいな」を意味する出雲弁の響き. それは、二人を包んだ穏やかで優しい松江の空気そのものです。文豪の言葉を支えたのは、傍らにいた一人の女性の「いたわり」でした。</p>
                     </div>
                 </div>
             </div>
@@ -317,14 +307,7 @@
                     <tr><th>裏生地</th><td>ポリエステル100％（すべり止め加工）</td></tr>
                     <tr><th>中材</th><td>合成繊維（ポリエーテルエステル系繊維）100％</td></tr>
                 </table>
-                
-                <div class="price-container">
-                    <span class="sale-period">期間限定：2026年3月27日まで</span>
-                    <span class="old-price">¥11,000</span>
-                    <span class="new-price">¥9,900</span>
-                    <span class="tax-in">(TAX IN)</span>
-                </div>
-                
+                <p class="price">¥11,000 <small style="font-size: 1rem; color: #888;">(TAX IN)</small></p>
                 <a href="https://forms.gle/gsFDFAZ9dR7z2eDw5" class="btn-purchase">購入ページへ進む</a>
             </div>
         </div>
@@ -336,7 +319,7 @@
             <h2 class="section-title">よくあるご質問</h2>
             <div class="faq-container">
                 <div class="faq-item"><span class="faq-q">既存の椅子に置くだけで良いですか？</span><p class="faq-a">はい。厚さ約4cmの薄型設計ですので、椅子の高さを変えずに座り心地を向上できます。</p></div>
-                <div class="faq-item"><span class="faq-q">お手入れの方法を教えてください。</span><p class="faq-a">丸洗いが可能です。中材はシャワーで流せ、非常に速乾性に優れています。</p></div>
+                <div class="faq-item"><span class="faq-q">お手入れの方法を教えてください。</span><p class="faq-a">丸洗いが可能です. 中材はシャワーで流せ、非常に速乾性に優れています。</p></div>
                 <div class="faq-item"><span class="faq-q">一般的なクッションとの違いは？</span><p class="faq-a">沈み込みすぎない「高反発」素材です。自然な重心移動を妨げず、姿勢を維持します。</p></div>
                 <div class="faq-item"><span class="faq-q">ギフト用としての発送は可能ですか？</span><p class="faq-a">はい。贈り物に大変喜ばれています。</p></div>
                 <div class="faq-item"><span class="faq-q">耐久性はどのくらいですか？</span><p class="faq-a">新幹線座席にも採用される素材を使用。へたりにくく、長くご愛用いただけます。</p></div>
